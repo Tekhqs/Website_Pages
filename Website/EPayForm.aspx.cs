@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 using EBizEMV;
 using Newtonsoft.Json;
 
-namespace EPaymentForm
+namespace Website
 {
     public partial class EPayForm : System.Web.UI.Page
     {
