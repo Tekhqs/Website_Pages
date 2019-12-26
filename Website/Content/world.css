@@ -11,6 +11,10 @@ ul.rtsUL > li.rtsLI:not(.rtsSelected) > span.rtsLink {
     color: #1492DB;
 }
 
+ul.rtsUL > li.rtsLI.rtsSelected  {
+    font-weight:bold;
+}
+
 #RadTabStrip4.rtsTop .rtsLevel1 {
     border-bottom-color: transparent;
 }
@@ -48,3 +52,11 @@ ul.rtsUL > li.rtsLI:not(.rtsSelected) > span.rtsLink {
         border-right-color: transparent;
         border-left-color: transparent;
     }
+
+.RadTabStrip_Default .rtsLevel1 .rtsSelected .rtsLink {
+    text-align: center;
+}
+
+.RadTabStrip_Default .rtsLevel1 .rtsLink {
+    text-align: center;
+}
