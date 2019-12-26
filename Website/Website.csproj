@@ -156,7 +156,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="Content\world.css" />
     <Content Include="Default.aspx" />
-    <Content Include="EPayForm.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Forms\ManageRecurringForm.aspx" />
     <Content Include="Forms\RecurringForm.aspx" />
@@ -8299,7 +8298,6 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="clsEMVHelper.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -8313,13 +8311,6 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="EPayForm.aspx.cs">
-      <DependentUpon>EPayForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="EPayForm.aspx.designer.cs">
-      <DependentUpon>EPayForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\ManageRecurringForm.aspx.cs">
       <DependentUpon>ManageRecurringForm.aspx</DependentUpon>

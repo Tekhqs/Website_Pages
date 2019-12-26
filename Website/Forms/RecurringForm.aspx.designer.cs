@@ -31,6 +31,15 @@ namespace Website.Forms {
         protected global::System.Web.UI.ScriptManager ScriptManagerForm1;
         
         /// <summary>
+        /// RadSkinManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadSkinManager RadSkinManager1;
+        
+        /// <summary>
         /// RadTabStrip1 control.
         /// </summary>
         /// <remarks>
@@ -148,22 +157,22 @@ namespace Website.Forms {
         protected global::Telerik.Web.UI.RadTextBox txtSavedCVV;
         
         /// <summary>
-        /// chkReceiptToCustomerSave control.
+        /// chkReceipt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadCheckBox chkReceiptToCustomerSave;
+        protected global::Telerik.Web.UI.RadCheckBox chkReceipt;
         
         /// <summary>
-        /// btnNewTranSavedCard control.
+        /// btnProcessThroughSavedCard control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadButton btnNewTranSavedCard;
+        protected global::Telerik.Web.UI.RadButton btnProcessThroughSavedCard;
         
         /// <summary>
         /// RadPageView10 control.
@@ -184,6 +193,15 @@ namespace Website.Forms {
         protected global::Telerik.Web.UI.RadTextBox txtCardNumber;
         
         /// <summary>
+        /// TextBoxRequiredFieldValidatorCardNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator TextBoxRequiredFieldValidatorCardNumber;
+        
+        /// <summary>
         /// txtBillingAddress control.
         /// </summary>
         /// <remarks>
@@ -191,6 +209,15 @@ namespace Website.Forms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadTextBox txtBillingAddress;
+        
+        /// <summary>
+        /// RequiredFieldValidatorBillingAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorBillingAddress;
         
         /// <summary>
         /// txtCardHolderName control.
@@ -202,6 +229,15 @@ namespace Website.Forms {
         protected global::Telerik.Web.UI.RadTextBox txtCardHolderName;
         
         /// <summary>
+        /// RequiredFieldValidatorCardHolderName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorCardHolderName;
+        
+        /// <summary>
         /// txtZipCode control.
         /// </summary>
         /// <remarks>
@@ -211,6 +247,15 @@ namespace Website.Forms {
         protected global::Telerik.Web.UI.RadTextBox txtZipCode;
         
         /// <summary>
+        /// RequiredFieldValidatorZipCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorZipCode;
+        
+        /// <summary>
         /// chkAllowSaveCC control.
         /// </summary>
         /// <remarks>
@@ -218,6 +263,24 @@ namespace Website.Forms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadCheckBox chkAllowSaveCC;
+        
+        /// <summary>
+        /// dropDownMonth control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadDropDownList dropDownMonth;
+        
+        /// <summary>
+        /// dropDownYear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadDropDownList dropDownYear;
         
         /// <summary>
         /// RadToolTip1 control.
@@ -236,6 +299,15 @@ namespace Website.Forms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadTextBox txtSecurityCode;
+        
+        /// <summary>
+        /// RequiredFieldValidatorSecurityCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorSecurityCode;
         
         /// <summary>
         /// chkReceiptToCustomer control.
