@@ -117,6 +117,7 @@
                                     <div class="col-12">
                                         is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                         It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s 
+                                   
                                     </div>
                                 </div>
 
@@ -142,29 +143,22 @@
                                                     </Items>
                                                 </telerik:RadDropDownList>
                                             </div>
+                                            <asp:RequiredFieldValidator
+                                                ID="RequiredFieldValidator2"
+                                                runat="server"
+                                                Display="Dynamic"
+                                                ControlToValidate="RadDropDownList1"
+                                                ErrorMessage="Account Type is required" ForeColor="Red">
+                                            </asp:RequiredFieldValidator>
                                         </div>
                                     </div>
                                 </div>
 
-                                <%--<div class="form-row">
-                                    <div class="form-group col-md-5">
-                                        <span>
-                                            <label class="ebiz-label">Account Holder Name *</label>
-                                        </span>
-                                        <telerik:RadTextBox ID="RadTextBox1" runat="server" CssClass="form-control" TabIndex="6" Width="650px"></telerik:RadTextBox>
-                                    </div>
-                                    <div class="offset-1">
-                                    </div>
-
-                                    <div class="form-group col-md-5">
-                                        <label class="ebiz-label">Bank Routing Number *</label>
-                                        <telerik:RadTextBox ID="RadTextBox2" runat="server" CssClass="form-control" TabIndex="6" Width="650px"></telerik:RadTextBox>
-                                    </div>
-                                </div>--%>
 
                                 <div class="row pt-4 pl-3">
                                     <div class="col-12">
                                         Please note that only days 5-20 each month are available for selection. This is because we need time to calculate your monthly statement and receive your payment.
+                                   
                                     </div>
                                 </div>
 
@@ -179,6 +173,7 @@
                                 <div class="row pt-5 pl-3">
                                     <div class="col-12 pb-4">
                                         Select a payment method
+                                   
                                     </div>
                                 </div>
                                 <telerik:RadTabStrip RenderMode="Lightweight" runat="server" ID="RadTabStrip3" MultiPageID="RadMultiPageCC" SelectedIndex="0">
@@ -232,160 +227,165 @@
                                             <telerik:RadPageView runat="server" ID="RadPageView10">
                                                 <%--New Credit Card Div--%>
                                                 <div class="row">
-                                                    <div class="col-10">
-                                                        <div id="form6" class="pt-5">
-                                                            <div class="form-row">
-                                                                <div class="form-group col-12 col-md-6">
-                                                                    <label class="ebiz-label">Card Number *</label>
-                                                                    <div class="col-12 pl-0">
-                                                                        <telerik:RadTextBox ID="txtCardNumber" runat="server" Skin="Bootstrap" TabIndex="1" Width="100%"></telerik:RadTextBox>
-                                                                    </div>
-                                                                    <asp:RequiredFieldValidator
-                                                                        ID="TextBoxRequiredFieldValidatorCardNumber"
-                                                                        runat="server"
-                                                                        Display="Dynamic"
-                                                                        ControlToValidate="txtCardNumber"
-                                                                        ErrorMessage="Card Number is required" ForeColor="Red">
-                                                                    </asp:RequiredFieldValidator>
-                                                                </div>                                                                
-                                                                <div class="form-group col-12 col-md-5 offset-md-1">
-                                                                    <label class="ebiz-label">Billing Address *</label>
-                                                                    <div class="col-12 pl-0">
-                                                                        <telerik:RadTextBox ID="txtBillingAddress" runat="server" Skin="Bootstrap" TabIndex="6" Width="100%"></telerik:RadTextBox>
-                                                                    </div>
-                                                                    <asp:RequiredFieldValidator
-                                                                        ID="RequiredFieldValidatorBillingAddress"
-                                                                        runat="server"
-                                                                        Display="Dynamic"
-                                                                        ControlToValidate="txtBillingAddress"
-                                                                        ErrorMessage="Billing Address is required" ForeColor="Red">
-                                                                    </asp:RequiredFieldValidator>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-row">
-                                                                <div class="form-group col-12 col-md-6">
-                                                                    <label class="ebiz-label">Name on Card *</label>
-                                                                    <div class="col-12 pl-0">                                                                    
-                                                                        <telerik:RadTextBox ID="txtCardHolderName" runat="server" Skin="Bootstrap" TabIndex="2" Width="100%"></telerik:RadTextBox>
-                                                                    </div>
-                                                                    <asp:RequiredFieldValidator
-                                                                        ID="RequiredFieldValidatorCardHolderName"
-                                                                        runat="server"
-                                                                        Display="Dynamic"
-                                                                        ControlToValidate="txtCardHolderName"
-                                                                        ErrorMessage="Card Holder Name is required" ForeColor="Red">
-                                                                    </asp:RequiredFieldValidator>
-                                                                </div>
-                                                                <div class="form-group col-12 col-md-5 offset-md-1">
-                                                                    <div class="form-group col-8 pl-0 d-inline-block">
-                                                                        <label class="ebiz-label">Zip Code / Postal Code *</label>
+                                                    <div class="col-12">
+                                                        <telerik:RadAjaxPanel runat="server">
+                                                            <div id="form6" class="pt-5">
+                                                                <div class="form-row">
+                                                                    <div class="form-group col-12 col-md-6">
+                                                                        <label class="ebiz-label">Card Number *</label>
                                                                         <div class="col-12 pl-0">
-                                                                            <telerik:RadTextBox ID="txtZipCode" runat="server" Skin="Bootstrap" TabIndex="9" Width="100%"></telerik:RadTextBox>
+                                                                            <telerik:RadTextBox ID="txtCardNumber" runat="server" Skin="Bootstrap" TabIndex="1" Width="100%"></telerik:RadTextBox>
                                                                         </div>
                                                                         <asp:RequiredFieldValidator
-                                                                            ID="RequiredFieldValidatorZipCode"
+                                                                            ID="TextBoxRequiredFieldValidatorCardNumber"
                                                                             runat="server"
                                                                             Display="Dynamic"
-                                                                            ControlToValidate="txtZipCode"
-                                                                            ErrorMessage="Zip Code is required" ForeColor="Red">
-                                                                        </asp:RequiredFieldValidator>
+                                                                            ControlToValidate="txtCardNumber"
+                                                                            ErrorMessage="Card Number is required" ForeColor="Red">
+                                                                    </asp:RequiredFieldValidator>
                                                                     </div>
-                                                                    <div class="form-group col-3 float-right pt-5">
-                                                                        <telerik:RadCheckBox ID="chkAllowSaveCC" runat="server" Text="Save card" Skin="Bootstrap" Font-Size="14px" TabIndex="10"></telerik:RadCheckBox>
+                                                                    <div class="form-group col-12 col-md-5 offset-md-1">
+                                                                        <label class="ebiz-label">Billing Address *</label>
+                                                                        <div class="col-12 pl-0">
+                                                                            <telerik:RadTextBox ID="txtBillingAddress" runat="server" Skin="Bootstrap" TabIndex="6" Width="100%"></telerik:RadTextBox>
+                                                                        </div>
+                                                                        <asp:RequiredFieldValidator
+                                                                            ID="RequiredFieldValidatorBillingAddress"
+                                                                            runat="server"
+                                                                            Display="Dynamic"
+                                                                            ControlToValidate="txtBillingAddress"
+                                                                            ErrorMessage="Billing Address is required" ForeColor="Red">
+                                                                    </asp:RequiredFieldValidator>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="form-row">
-                                                                <div class="form-group col-3">
-                                                                    <label class="row pl-3 ebiz-label">Expiration Date *</label>
-                                                                    <div class="d-flex">
-                                                                        <%--<select id="dropDownMonth" name="dropDownMonth" tabindex="3" class="form-control" style="max-width: 120px" data-role="dropdownlist">
+                                                                <div class="form-row">
+                                                                    <div class="form-group col-12 col-md-6">
+                                                                        <label class="ebiz-label">Name on Card *</label>
+                                                                        <div class="col-12 pl-0">
+                                                                            <telerik:RadTextBox ID="txtCardHolderName" runat="server" Skin="Bootstrap" TabIndex="2" Width="100%"></telerik:RadTextBox>
+                                                                        </div>
+                                                                        <asp:RequiredFieldValidator
+                                                                            ID="RequiredFieldValidatorCardHolderName"
+                                                                            runat="server"
+                                                                            Display="Dynamic"
+                                                                            ControlToValidate="txtCardHolderName"
+                                                                            ErrorMessage="Card Holder Name is required" ForeColor="Red">
+                                                                    </asp:RequiredFieldValidator>
+                                                                    </div>
+                                                                    <div class="form-group col-12 col-md-5 offset-md-1">
+                                                                        <div class="form-group col-8 pl-0 d-inline-block">
+                                                                            <label class="ebiz-label">Zip Code / Postal Code *</label>
+                                                                            <div class="col-12 pl-0">
+                                                                                <telerik:RadTextBox ID="txtZipCode" runat="server" Skin="Bootstrap" TabIndex="9" Width="100%"></telerik:RadTextBox>
+                                                                            </div>
+                                                                            <asp:RequiredFieldValidator
+                                                                                ID="RequiredFieldValidatorZipCode"
+                                                                                runat="server"
+                                                                                Display="Dynamic"
+                                                                                ControlToValidate="txtZipCode"
+                                                                                ErrorMessage="Zip Code is required" ForeColor="Red">
+                                                                        </asp:RequiredFieldValidator>
+                                                                        </div>
+                                                                        <div class="form-group col-3 float-right pt-5">
+                                                                            <telerik:RadCheckBox ID="chkAllowSaveCC" runat="server" Text="Save card" Skin="Bootstrap" Font-Size="14px" TabIndex="10"></telerik:RadCheckBox>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-row">
+                                                                    <div class="form-group col-3">
+                                                                        <label class="row pl-3 ebiz-label">Expiration Date *</label>
+                                                                        <div class="d-flex">
+                                                                            <%--<select id="dropDownMonth" name="dropDownMonth" tabindex="3" class="form-control" style="max-width: 120px" data-role="dropdownlist">
                                                                             <option value="-1">MM</option>
                                                                         </select>--%>
-                                                                        <div class="col-6 pl-0">
-                                                                            <telerik:RadDropDownList ID="dropDownMonth" runat="server"
-                                                                                Skin="Bootstrap" Width="100%">
-                                                                                <Items>
-                                                                                    <telerik:DropDownListItem Text="MM" Value="MM" Selected="true" />
-                                                                                    <telerik:DropDownListItem Text="01" Value="01" />
-                                                                                    <telerik:DropDownListItem Text="02" Value="02" />
-                                                                                    <telerik:DropDownListItem Text="03" Value="03" />
-                                                                                    <telerik:DropDownListItem Text="04" Value="04" />
-                                                                                    <telerik:DropDownListItem Text="05" Value="05" />
-                                                                                    <telerik:DropDownListItem Text="06" Value="06" />
-                                                                                    <telerik:DropDownListItem Text="07" Value="07" />
-                                                                                    <telerik:DropDownListItem Text="08" Value="08" />
-                                                                                    <telerik:DropDownListItem Text="09" Value="09" />
-                                                                                    <telerik:DropDownListItem Text="10" Value="10" />
-                                                                                    <telerik:DropDownListItem Text="11" Value="11" />
-                                                                                    <telerik:DropDownListItem Text="12" Value="12" />
-                                                                                </Items>
-                                                                            </telerik:RadDropDownList>
-                                                                        </div>
-                                                                        
-                                                                    <%--<select id="dropDownYear" name="dropDownYear" tabindex="4" class="form-control ml-3" data-role="dropdownlist" style="max-width: 150px; min-width: 80px">
+                                                                            <div class="col-6 pl-0">
+                                                                                <telerik:RadDropDownList ID="dropDownMonth" runat="server"
+                                                                                    Skin="Bootstrap" Width="100%">
+                                                                                    <Items>
+                                                                                        <telerik:DropDownListItem Text="MM" Value="MM" Selected="true" />
+                                                                                        <telerik:DropDownListItem Text="01" Value="01" />
+                                                                                        <telerik:DropDownListItem Text="02" Value="02" />
+                                                                                        <telerik:DropDownListItem Text="03" Value="03" />
+                                                                                        <telerik:DropDownListItem Text="04" Value="04" />
+                                                                                        <telerik:DropDownListItem Text="05" Value="05" />
+                                                                                        <telerik:DropDownListItem Text="06" Value="06" />
+                                                                                        <telerik:DropDownListItem Text="07" Value="07" />
+                                                                                        <telerik:DropDownListItem Text="08" Value="08" />
+                                                                                        <telerik:DropDownListItem Text="09" Value="09" />
+                                                                                        <telerik:DropDownListItem Text="10" Value="10" />
+                                                                                        <telerik:DropDownListItem Text="11" Value="11" />
+                                                                                        <telerik:DropDownListItem Text="12" Value="12" />
+                                                                                    </Items>
+                                                                                </telerik:RadDropDownList>
+                                                                            </div>
+
+                                                                            <%--<select id="dropDownYear" name="dropDownYear" tabindex="4" class="form-control ml-3" data-role="dropdownlist" style="max-width: 150px; min-width: 80px">
                                                                         <option value="-1">YY</option>
                                                                     </select>--%>
-                                                                        <div class="col-6">
-                                                                            <telerik:RadDropDownList ID="dropDownYear" runat="server"
-                                                                                Skin="Bootstrap" Width="100%">
-                                                                                <Items>
-                                                                                    <telerik:DropDownListItem Text="YY" Value="YY" Selected="true" />
-                                                                                    <telerik:DropDownListItem Text="2019" Value="2019" />
-                                                                                    <telerik:DropDownListItem Text="2020" Value="2020" />
-                                                                                    <telerik:DropDownListItem Text="2021" Value="2021" />
-                                                                                    <telerik:DropDownListItem Text="2022" Value="2022" />
-                                                                                    <telerik:DropDownListItem Text="2023" Value="2023" />
-                                                                                    <telerik:DropDownListItem Text="2024" Value="2024" />
-                                                                                    <telerik:DropDownListItem Text="2025" Value="2025" />
-                                                                                    <telerik:DropDownListItem Text="2026" Value="2026" />
-                                                                                    <telerik:DropDownListItem Text="2027" Value="2027" />
-                                                                                    <telerik:DropDownListItem Text="2028" Value="2028" />
-                                                                                    <telerik:DropDownListItem Text="2029" Value="2029" />
-                                                                                    <telerik:DropDownListItem Text="2030" Value="2030" />
-                                                                                </Items>
-                                                                            </telerik:RadDropDownList>
+                                                                            <div class="col-6">
+                                                                                <telerik:RadDropDownList ID="dropDownYear" runat="server"
+                                                                                    Skin="Bootstrap" Width="100%">
+                                                                                    <Items>
+                                                                                        <telerik:DropDownListItem Text="YY" Value="YY" Selected="true" />
+                                                                                        <telerik:DropDownListItem Text="2019" Value="2019" />
+                                                                                        <telerik:DropDownListItem Text="2020" Value="2020" />
+                                                                                        <telerik:DropDownListItem Text="2021" Value="2021" />
+                                                                                        <telerik:DropDownListItem Text="2022" Value="2022" />
+                                                                                        <telerik:DropDownListItem Text="2023" Value="2023" />
+                                                                                        <telerik:DropDownListItem Text="2024" Value="2024" />
+                                                                                        <telerik:DropDownListItem Text="2025" Value="2025" />
+                                                                                        <telerik:DropDownListItem Text="2026" Value="2026" />
+                                                                                        <telerik:DropDownListItem Text="2027" Value="2027" />
+                                                                                        <telerik:DropDownListItem Text="2028" Value="2028" />
+                                                                                        <telerik:DropDownListItem Text="2029" Value="2029" />
+                                                                                        <telerik:DropDownListItem Text="2030" Value="2030" />
+                                                                                    </Items>
+                                                                                </telerik:RadDropDownList>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="d-flex">
+                                                                            <div style="width: 150px"><span class="k-invalid-msg" data-for="dropDownMonth"></span></div>
+
+                                                                            <div style="width: 150px; min-width: 80px">
+                                                                                <span class="k-invalid-msg" data-for="dropDownYear"></span>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="d-flex">
-                                                                        <div style="width: 150px"><span class="k-invalid-msg" data-for="dropDownMonth"></span></div>
-
-                                                                        <div style="width: 150px; min-width: 80px">
-                                                                            <span class="k-invalid-msg" data-for="dropDownYear"></span>
+                                                                    <div class="form-group col-3">
+                                                                        <div class="d-flex" style="min-width: 150px;">
+                                                                            <label class="ebiz-label">Security Code *</label>
+                                                                            <telerik:RadToolTip ID="RadToolTip1" runat="server" Position="BottomRight" HideEvent="LeaveToolTip"></telerik:RadToolTip>
                                                                         </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group col-3">
-                                                                    <div class="d-flex" style="min-width: 150px;">
-                                                                        <label class="ebiz-label">Security Code *</label>
-
-                                                                        <telerik:RadToolTip ID="RadToolTip1" runat="server" Position="BottomRight" HideEvent="LeaveToolTip"></telerik:RadToolTip>
-                                                                    </div>
-                                                                    <div class="col-12 pl-0">
-                                                                        <telerik:RadTextBox ID="txtSecurityCode" runat="server" Skin="Bootstrap" TabIndex="5" Width="100%"></telerik:RadTextBox>
-                                                                    </div>
-                                                                    <asp:RequiredFieldValidator
-                                                                        ID="RequiredFieldValidatorSecurityCode"
-                                                                        runat="server"
-                                                                        Display="Dynamic"
-                                                                        ControlToValidate="txtSecurityCode"
-                                                                        ErrorMessage="Security Code is required" ForeColor="Red">
+                                                                        <div class="col-12 pl-0">
+                                                                            <telerik:RadTextBox ID="txtSecurityCode" runat="server" Skin="Bootstrap" TabIndex="5" Width="100%"></telerik:RadTextBox>
+                                                                        </div>
+                                                                        <asp:RequiredFieldValidator
+                                                                            ID="RequiredFieldValidatorSecurityCode"
+                                                                            runat="server"
+                                                                            Display="Dynamic"
+                                                                            ControlToValidate="txtSecurityCode"
+                                                                            ErrorMessage="Security Code is required" ForeColor="Red">
                                                                     </asp:RequiredFieldValidator>
+                                                                    </div>
+                                                                    <div class="form-group col-12 col-md-5 offset-1">
+                                                                        <div class="col-12">
+                                                                            <span>
+                                                                                <label class="ebiz-label">
+                                                                                    <telerik:RadCheckBox ID="chkReceiptToCustomer" runat="server" Text="Send Receipt" CssClass="form-control" TabIndex="10" Skin="Bootstrap" Font-Size="14px"></telerik:RadCheckBox>
+                                                                                </label>
+                                                                            </span>
+                                                                            <span class="float-right class-SeperatedComman pt-2">seperate additional emails with a comma</span>
+                                                                            <telerik:RadTextBox ID="txtEmail" runat="server" Skin="Bootstrap" TabIndex="9" Width="100%"></telerik:RadTextBox>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
-                                                                <div class="form-group col-12 col-md-5 offset-1">
-                                                                    <label class="ebiz-label">
-                                                                        <telerik:RadCheckBox ID="chkReceiptToCustomer" runat="server" Text="Send Receipt" CssClass="form-control" TabIndex="10" Skin="Bootstrap" Font-Size="14px"></telerik:RadCheckBox>
-                                                                    </label>
-                                                                    <telerik:RadTextBox ID="txtEmail" runat="server" Skin="Bootstrap" TabIndex="9" Width="100%"></telerik:RadTextBox>
+                                                                <div class="form-row pt-5">
+                                                                    <div class="offset-7 col-md-4 col-12">
+                                                                        <telerik:RadButton ID="btnProcess" runat="server" Text="Create Recurring Payment" Skin="Bootstrap" BackColor="#1492DB" ForeColor="White" TabIndex="11" Width="100%" Height="30px"></telerik:RadButton>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="form-row pt-5">
-                                                                <div class="offset-6"></div>
-                                                                <div class="col-md-6">
-                                                                    <telerik:RadButton ID="btnProcess" runat="server" Text="Create Recurring Payment" Skin="Bootstrap" BackColor="#1492DB" ForeColor="White" TabIndex="11" Width="500px" Height="30px"></telerik:RadButton>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        </telerik:RadAjaxPanel>
                                                     </div>
                                                 </div>
                                             </telerik:RadPageView>
@@ -421,45 +421,75 @@
                                             <telerik:RadPageView runat="server" ID="RadPageView61">
                                                 <div class="row">
                                                     <div class="col-12">
-
-                                                        <div id="AchForm" class="editibleCell ddlApp pt-5">
-                                                            <div class="form-row">
-                                                                <div class="form-group col-md-5">
-                                                                    <span>
+                                                        <telerik:RadAjaxPanel runat="server">
+                                                            <div id="AchForm" class="pt-5">
+                                                                <div class="form-row">
+                                                                    <div class="form-group col-12 col-md-6">
                                                                         <label class="ebiz-label">Account Holder Name *</label>
-                                                                    </span>
-                                                                    <telerik:RadTextBox ID="txtNewACHAccountHolderName" runat="server" Skin="Bootstrap" TabIndex="6" Width="680px"></telerik:RadTextBox>
+                                                                        <div class="col-12 pl-0">
+                                                                            <telerik:RadTextBox ID="txtNewACHAccountHolderName" runat="server" Skin="Bootstrap" TabIndex="6" Width="100%"></telerik:RadTextBox>
+                                                                        </div>
+                                                                        <asp:RequiredFieldValidator
+                                                                            ID="RequiredFieldValidatorAccountHolderName"
+                                                                            runat="server"
+                                                                            Display="Dynamic"
+                                                                            ControlToValidate="txtNewACHAccountHolderName"
+                                                                            ErrorMessage="Account Holder Name is required" ForeColor="Red">
+                                                                        </asp:RequiredFieldValidator>
+                                                                    </div>
+                                                                    <div class="form-group col-12 col-md-5 offset-md-1">
+                                                                        <label class="ebiz-label">Bank Routing Number *</label>
+                                                                        <div class="col-12 pl-0">
+                                                                            <telerik:RadTextBox ID="txtNewACHBankRoutingNumber" runat="server" Skin="Bootstrap" TabIndex="6" Width="100%"></telerik:RadTextBox>
+                                                                        </div>
+                                                                        <asp:RequiredFieldValidator
+                                                                            ID="RequiredFieldValidatorBankRoutingNumber"
+                                                                            runat="server"
+                                                                            Display="Dynamic"
+                                                                            ControlToValidate="txtNewACHBankRoutingNumber"
+                                                                            ErrorMessage="Bank Routing Number is required" ForeColor="Red">
+                                                                        </asp:RequiredFieldValidator>
+                                                                    </div>
                                                                 </div>
-                                                                <div class="form-group col-5 offset-1">
-                                                                    <label class="ebiz-label">Bank Routing Number *</label>
-                                                                    <telerik:RadTextBox ID="txtNewACHBankRoutingNumber" runat="server" Skin="Bootstrap" TabIndex="6" Width="680px"></telerik:RadTextBox>
+
+                                                                <div class="form-row">
+                                                                    <div class="form-group col-12 col-md-6">
+                                                                        <label class="ebiz-label">Account Type *</label>
+                                                                        <div class="col-12 pl-0">
+                                                                            <telerik:RadDropDownList ID="RadDropDownListAccountType" runat="server" Skin="Bootstrap" Width="100%">
+                                                                                <Items>
+                                                                                    <telerik:DropDownListItem Text="Saving" Value="0" />
+                                                                                </Items>
+                                                                            </telerik:RadDropDownList>
+                                                                        </div>
+                                                                        <asp:RequiredFieldValidator
+                                                                            ID="RequiredFieldValidatorAccountType"
+                                                                            runat="server"
+                                                                            Display="Dynamic"
+                                                                            ControlToValidate="RadDropDownListAccountType"
+                                                                            ErrorMessage="Account Type is required" ForeColor="Red">
+                                                                        </asp:RequiredFieldValidator>
+                                                                    </div>
+                                                                    <div class="form-group col-12 col-md-5 offset-md-1">
+                                                                        <label class="ebiz-label">Bank Account Number *</label>
+                                                                        <div class="col-12 pl-0">
+                                                                            <telerik:RadTextBox ID="txtNewACHBankAccountNumber" runat="server" Skin="Bootstrap" TabIndex="6" Width="100%"></telerik:RadTextBox>
+                                                                        </div>
+                                                                        <asp:RequiredFieldValidator
+                                                                            ID="RequiredFieldValidator1"
+                                                                            runat="server"
+                                                                            Display="Dynamic"
+                                                                            ControlToValidate="txtNewACHBankAccountNumber"
+                                                                            ErrorMessage="Bank Account Number is required" ForeColor="Red"></asp:RequiredFieldValidator>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-row">
+                                                                    <div class="col-5 offset-7">
+                                                                        <telerik:RadButton ID="idBtnNewACHProcess" runat="server" Text="Process" Skin="Bootstrap" BackColor="#1492DB" ForeColor="White" TabIndex="11" Width="100%"></telerik:RadButton>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-
-                                                            <div class="form-row">
-                                                                <div class="form-group col-2">
-                                                                    <label class="ebiz-label">Account Type *</label>
-
-                                                                    <telerik:RadDropDownList ID="RadDropDownList3" runat="server" Skin="Bootstrap" Width="250px">
-                                                                        <Items>
-                                                                            <telerik:DropDownListItem Text="Saving" Value="0" Selected="true" />
-                                                                        </Items>
-                                                                    </telerik:RadDropDownList>
-                                                                </div>
-                                                                <div class="offset-4"></div>
-                                                                <div class="form-group col-md-5">
-                                                                    <label class="ebiz-label">Bank Account Number *</label>
-                                                                    <telerik:RadTextBox ID="txtNewACHBankAccountNumber" runat="server" Skin="Bootstrap" TabIndex="6" Width="680px"></telerik:RadTextBox>
-
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-row ">
-                                                                <div class="offset-6"></div>
-                                                                <div class="col-md-2">
-                                                                    <telerik:RadButton ID="idBtnNewACHProcess" runat="server" Text="Process" Skin="Bootstrap" BackColor="#1492DB" ForeColor="White" TabIndex="11" Width="500px" Height="30px"></telerik:RadButton>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        </telerik:RadAjaxPanel>
                                                     </div>
                                                 </div>
                                             </telerik:RadPageView>

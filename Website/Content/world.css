@@ -60,3 +60,9 @@ ul.rtsUL > li.rtsLI.rtsSelected  {
 .RadTabStrip_Default .rtsLevel1 .rtsLink {
     text-align: center;
 }
+.class-SeperatedComman {
+    font-weight: normal;
+    font-size: 13px;
+    color: #afaaaa;
+    font-style:italic;
+}
