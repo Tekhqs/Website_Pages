@@ -1,80 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RecurringForm.aspx.cs" Inherits="Website.Forms.Form1" %>
 
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
-<script runat="server">
-    protected void Page_PreRenderComplete(object sender, EventArgs e)
-    {
-        txtCardNumber.EnabledStyle.CssClass = String.Empty;
-        txtCardNumber.HoveredStyle.CssClass = String.Empty;
-        txtCardNumber.FocusedStyle.CssClass = String.Empty;
-        txtCardNumber.EnabledStyle.CssClass = "form-control";
-        txtCardNumber.HoveredStyle.CssClass = "form-control";
-        txtCardNumber.FocusedStyle.CssClass = "form-control";
-
-        txtBillingAddress.EnabledStyle.CssClass = String.Empty;
-        txtBillingAddress.HoveredStyle.CssClass = String.Empty;
-        txtBillingAddress.FocusedStyle.CssClass = String.Empty;
-        txtBillingAddress.EnabledStyle.CssClass = "form-control";
-        txtBillingAddress.HoveredStyle.CssClass = "form-control";
-        txtBillingAddress.FocusedStyle.CssClass = "form-control";
-
-        txtCardHolderName.EnabledStyle.CssClass = String.Empty;
-        txtCardHolderName.HoveredStyle.CssClass = String.Empty;
-        txtCardHolderName.FocusedStyle.CssClass = String.Empty;
-        txtCardHolderName.EnabledStyle.CssClass = "form-control";
-        txtCardHolderName.HoveredStyle.CssClass = "form-control";
-        txtCardHolderName.FocusedStyle.CssClass = "form-control";
-
-        txtZipCode.EnabledStyle.CssClass = String.Empty;
-        txtZipCode.HoveredStyle.CssClass = String.Empty;
-        txtZipCode.FocusedStyle.CssClass = String.Empty;
-        txtZipCode.EnabledStyle.CssClass = "form-control";
-        txtZipCode.HoveredStyle.CssClass = "form-control";
-        txtZipCode.FocusedStyle.CssClass = "form-control";
-
-        txtSecurityCode.EnabledStyle.CssClass = String.Empty;
-        txtSecurityCode.HoveredStyle.CssClass = String.Empty;
-        txtSecurityCode.FocusedStyle.CssClass = String.Empty;
-        txtSecurityCode.EnabledStyle.CssClass = "form-control";
-        txtSecurityCode.HoveredStyle.CssClass = "form-control";
-        txtSecurityCode.FocusedStyle.CssClass = "form-control";
-
-        txtEmail.EnabledStyle.CssClass = String.Empty;
-        txtEmail.HoveredStyle.CssClass = String.Empty;
-        txtEmail.FocusedStyle.CssClass = String.Empty;
-        txtEmail.EnabledStyle.CssClass = "form-control";
-        txtEmail.HoveredStyle.CssClass = "form-control";
-        txtEmail.FocusedStyle.CssClass = "form-control";
-
-        txtNewACHBankRoutingNumber.EnabledStyle.CssClass = String.Empty;
-        txtNewACHBankRoutingNumber.HoveredStyle.CssClass = String.Empty;
-        txtNewACHBankRoutingNumber.FocusedStyle.CssClass = String.Empty;
-        txtNewACHBankRoutingNumber.EnabledStyle.CssClass = "form-control";
-        txtNewACHBankRoutingNumber.HoveredStyle.CssClass = "form-control";
-        txtNewACHBankRoutingNumber.FocusedStyle.CssClass = "form-control";
-
-        txtNewACHBankAccountNumber.EnabledStyle.CssClass = String.Empty;
-        txtNewACHBankAccountNumber.HoveredStyle.CssClass = String.Empty;
-        txtNewACHBankAccountNumber.FocusedStyle.CssClass = String.Empty;
-        txtNewACHBankAccountNumber.EnabledStyle.CssClass = "form-control";
-        txtNewACHBankAccountNumber.HoveredStyle.CssClass = "form-control";
-        txtNewACHBankAccountNumber.FocusedStyle.CssClass = "form-control";
-
-        txtNewACHAccountHolderName.EnabledStyle.CssClass = String.Empty;
-        txtNewACHAccountHolderName.HoveredStyle.CssClass = String.Empty;
-        txtNewACHAccountHolderName.FocusedStyle.CssClass = String.Empty;
-        txtNewACHAccountHolderName.EnabledStyle.CssClass = "form-control";
-        txtNewACHAccountHolderName.HoveredStyle.CssClass = "form-control";
-        txtNewACHAccountHolderName.FocusedStyle.CssClass = "form-control";
-
-        txtSavedCVV.EnabledStyle.CssClass = String.Empty;
-        txtSavedCVV.HoveredStyle.CssClass = String.Empty;
-        txtSavedCVV.FocusedStyle.CssClass = String.Empty;
-        txtSavedCVV.EnabledStyle.CssClass = "form-control";
-        txtSavedCVV.HoveredStyle.CssClass = "form-control";
-        txtSavedCVV.FocusedStyle.CssClass = "form-control";
-    }
-</script>
 
 <!DOCTYPE html>
 
@@ -100,16 +26,16 @@
                             </div>
                             <div class="col-5">
                                 <div class="float-right">
-                                <label for="RadDropDownList1">Status</label>
-                                <telerik:RadDropDownList ID="RadDropDownList3" runat="server"
-                                    Skin="Bootstrap" Width="250px">
-                                    <Items>
-                                        <telerik:DropDownListItem Text="Active Payment" Value="0" Selected="true" />
-                                        <telerik:DropDownListItem Text="Active Suspended" Value="0" />
-                                        <telerik:DropDownListItem Text="Canceled Payment" Value="0" />
-                                    </Items>
-                                </telerik:RadDropDownList>
-                                    </div>
+                                    <label for="RadDropDownList1">Status</label>
+                                    <telerik:RadDropDownList ID="RadDropDownList3" runat="server"
+                                        Skin="Bootstrap" Width="250px">
+                                        <Items>
+                                            <telerik:DropDownListItem Text="Active Payment" Value="0" Selected="true" />
+                                            <telerik:DropDownListItem Text="Active Suspended" Value="0" />
+                                            <telerik:DropDownListItem Text="Canceled Payment" Value="0" />
+                                        </Items>
+                                    </telerik:RadDropDownList>
+                                </div>
                             </div>
                         </div>
 
@@ -179,6 +105,11 @@
                                 <span>
                                     <a href="#" onclick="fnShowPaymentMethod()">Change current payment method</a>
                                 </span>
+                            </div>
+                            <div class="col-12 pt-5">
+                                <div class="col-5 col-lg-3">
+                                    <telerik:RadButton ID="btnSaveRP" runat="server" Text="Save Recurring Payment" Skin="Bootstrap" BackColor="#1492DB" ForeColor="White" TabIndex="11" Width="100%"></telerik:RadButton>
+                                </div>
                             </div>
                         </div>
                         <div id="id-PaymentMethods" style="display: none;">
@@ -377,16 +308,20 @@
                                                                     </asp:RequiredFieldValidator>
                                                                 </div>
                                                                 <div class="form-group col-12 col-md-5 offset-1">
-                                                                    <label class="ebiz-label">
-                                                                        <telerik:RadCheckBox ID="chkReceiptToCustomer" runat="server" Text="Send Receipt" CssClass="form-control" TabIndex="10" Skin="Bootstrap" Font-Size="14px"></telerik:RadCheckBox>
-                                                                    </label>
-                                                                    <telerik:RadTextBox ID="txtEmail" runat="server" Skin="Bootstrap" TabIndex="9" Width="100%"></telerik:RadTextBox>
-                                                                </div>
+                                                                        <div class="col-12">
+                                                                            <span>
+                                                                                <label class="ebiz-label">
+                                                                                    <telerik:RadCheckBox ID="chkReceiptToCustomer" runat="server" Text="Send Receipt" CssClass="form-control" TabIndex="10" Skin="Bootstrap" Font-Size="14px"></telerik:RadCheckBox>
+                                                                                </label>
+                                                                            </span>
+                                                                            <span class="float-right class-SeperatedComman pt-2">seperate additional emails with a comma</span>
+                                                                            <telerik:RadTextBox ID="txtEmail" runat="server" Skin="Bootstrap" TabIndex="9" Width="100%"></telerik:RadTextBox>
+                                                                        </div>
+                                                                    </div>
                                                             </div>
                                                             <div class="form-row pt-5">
-                                                                <div class="offset-6"></div>
-                                                                <div class="col-md-6">
-                                                                    <telerik:RadButton ID="btnProcess" runat="server" Text="Create Recurring Payment" Skin="Bootstrap" BackColor="#1492DB" ForeColor="White" TabIndex="11" Width="500px" Height="30px"></telerik:RadButton>
+                                                                <div class="offset-7 col-md-4 col-12">
+                                                                    <telerik:RadButton ID="RadButton2" runat="server" Text="Create Recurring Payment" Skin="Bootstrap" BackColor="#1492DB" ForeColor="White" TabIndex="11" Width="100%" Height="30px"></telerik:RadButton>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -489,7 +424,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="form-row">
-                                                                <div class="col-5 offset-7">
+                                                                <div class="offset-7 col-md-4 col-12">
                                                                     <telerik:RadButton ID="idBtnNewACHProcess" runat="server" Text="Process" Skin="Bootstrap" BackColor="#1492DB" ForeColor="White" TabIndex="11" Width="100%"></telerik:RadButton>
                                                                 </div>
                                                             </div>

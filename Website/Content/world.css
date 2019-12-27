@@ -34,6 +34,46 @@ ul.rtsUL > li.rtsLI.rtsSelected  {
         border-left-color: transparent;
     }
 
+#RadTabStrip6.rtsTop .rtsLevel1 {
+    border-bottom-color: transparent;
+}
+
+    #RadTabStrip6.rtsTop .rtsLevel1 .rtsSelected .rtsLink {
+        border-bottom-color: transparent;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-left-color: transparent;
+        font-weight: bold;
+    }
+
+    #RadTabStrip6.rtsTop .rtsLevel1:not(.rtsSelected) .rtsLink {
+        border-bottom-color: transparent;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-left-color: transparent;
+    }
+
+
+#RadTabStrip7.rtsTop .rtsLevel1 {
+    border-bottom-color: transparent;
+}
+
+    #RadTabStrip7.rtsTop .rtsLevel1 .rtsSelected .rtsLink {
+        border-bottom-color: transparent;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-left-color: transparent;
+        font-weight: bold;
+    }
+
+    #RadTabStrip7.rtsTop .rtsLevel1:not(.rtsSelected) .rtsLink {
+        border-bottom-color: transparent;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-left-color: transparent;
+    }
+
+
 #RadTabStrip5.rtsTop .rtsLevel1 {
     border-bottom-color: transparent;
 }
@@ -65,4 +105,15 @@ ul.rtsUL > li.rtsLI.rtsSelected  {
     font-size: 13px;
     color: #afaaaa;
     font-style:italic;
+}
+.RadRadioButtonList button {
+    font-size: 14px;
+}
+.rbl input[type="radio"] {
+    margin-left: 10px;
+    margin-right: 1px;
+}
+
+.rbHorizontalList button.RadButton.rbRadioButton {
+    margin-right: 100px;
 }

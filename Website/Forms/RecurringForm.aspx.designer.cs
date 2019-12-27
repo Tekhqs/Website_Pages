@@ -31,40 +31,13 @@ namespace Website.Forms {
         protected global::System.Web.UI.ScriptManager ScriptManagerForm1;
         
         /// <summary>
-        /// RadSkinManager1 control.
+        /// RadDropDownList3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadSkinManager RadSkinManager1;
-        
-        /// <summary>
-        /// RadTabStrip1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Telerik.Web.UI.RadTabStrip RadTabStrip1;
-        
-        /// <summary>
-        /// RadMultiPage1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Telerik.Web.UI.RadMultiPage RadMultiPage1;
-        
-        /// <summary>
-        /// RadPageView1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Telerik.Web.UI.RadPageView RadPageView1;
+        protected global::Telerik.Web.UI.RadDropDownList RadDropDownList3;
         
         /// <summary>
         /// RadDropDownList1 control.
@@ -76,6 +49,15 @@ namespace Website.Forms {
         protected global::Telerik.Web.UI.RadDropDownList RadDropDownList1;
         
         /// <summary>
+        /// RequiredFieldValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        
+        /// <summary>
         /// RadCheckBox1 control.
         /// </summary>
         /// <remarks>
@@ -83,6 +65,15 @@ namespace Website.Forms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadCheckBox RadCheckBox1;
+        
+        /// <summary>
+        /// btnSaveRP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadButton btnSaveRP;
         
         /// <summary>
         /// RadTabStrip3 control.
@@ -328,13 +319,13 @@ namespace Website.Forms {
         protected global::Telerik.Web.UI.RadTextBox txtEmail;
         
         /// <summary>
-        /// btnProcess control.
+        /// RadButton2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadButton btnProcess;
+        protected global::Telerik.Web.UI.RadButton RadButton2;
         
         /// <summary>
         /// RadPageView2 control.
@@ -364,13 +355,13 @@ namespace Website.Forms {
         protected global::Telerik.Web.UI.RadMultiPage RadMultiPage3;
         
         /// <summary>
-        /// RadPageView6 control.
+        /// RadPageView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadPageView RadPageView6;
+        protected global::Telerik.Web.UI.RadPageView RadPageView1;
         
         /// <summary>
         /// ddlSavedACHAccount control.
@@ -409,6 +400,15 @@ namespace Website.Forms {
         protected global::Telerik.Web.UI.RadTextBox txtNewACHAccountHolderName;
         
         /// <summary>
+        /// RequiredFieldValidatorAccountHolderName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorAccountHolderName;
+        
+        /// <summary>
         /// txtNewACHBankRoutingNumber control.
         /// </summary>
         /// <remarks>
@@ -418,13 +418,31 @@ namespace Website.Forms {
         protected global::Telerik.Web.UI.RadTextBox txtNewACHBankRoutingNumber;
         
         /// <summary>
-        /// RadDropDownList3 control.
+        /// RequiredFieldValidatorBankRoutingNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadDropDownList RadDropDownList3;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorBankRoutingNumber;
+        
+        /// <summary>
+        /// RadDropDownListAccountType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadDropDownList RadDropDownListAccountType;
+        
+        /// <summary>
+        /// RequiredFieldValidatorAccountType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorAccountType;
         
         /// <summary>
         /// txtNewACHBankAccountNumber control.
@@ -436,6 +454,15 @@ namespace Website.Forms {
         protected global::Telerik.Web.UI.RadTextBox txtNewACHBankAccountNumber;
         
         /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        
+        /// <summary>
         /// idBtnNewACHProcess control.
         /// </summary>
         /// <remarks>
@@ -443,23 +470,5 @@ namespace Website.Forms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadButton idBtnNewACHProcess;
-        
-        /// <summary>
-        /// RadPageView3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Telerik.Web.UI.RadPageView RadPageView3;
-        
-        /// <summary>
-        /// RadGrid_ScheduledRecurringPayments control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Telerik.Web.UI.RadGrid RadGrid_ScheduledRecurringPayments;
     }
 }
