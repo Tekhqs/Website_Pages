@@ -93,11 +93,17 @@ ul.rtsUL > li.rtsLI.rtsSelected  {
         border-left-color: transparent;
     }
 
-.RadTabStrip_Default .rtsLevel1 .rtsSelected .rtsLink {
+/*.RadTabStrip_Default .rtsLevel1 .rtsSelected .rtsLink {
+    text-align: center;
+}*/
+#RadTabStrip3 .rtsLevel1 .rtsSelected .rtsLink {
     text-align: center;
 }
 
-.RadTabStrip_Default .rtsLevel1 .rtsLink {
+/*.RadTabStrip_Default .rtsLevel1 .rtsLink {
+    text-align: center;
+}*/
+#RadTabStrip3 .rtsLevel1 .rtsLink {
     text-align: center;
 }
 .class-SeperatedComman {
@@ -116,4 +122,95 @@ ul.rtsUL > li.rtsLI.rtsSelected  {
 
 .rbHorizontalList button.RadButton.rbRadioButton {
     margin-right: 100px;
+}
+
+/*Daimaan*/
+.k-grid-header th.k-header {
+    text-align: center;
+    background-color: #FF0099;
+}
+
+#RadGrid_ScheduledRecurringPayments {
+    text-align: center;
+    background-color: wheat;
+}
+
+.SelectedItem {
+    /*background-image: url(img/SelectedRow.gif);*/
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+.myClass .RadGrid .rgHeader {
+    background-image: none;
+    background-color: none;
+}
+
+.myClass .RadGrid .rgRow {
+    background-color: white;
+    border-right: initial;
+    border-right-color: #EAE9E9;
+    border-left: initial;
+    border-left-color: #EAE9E9
+}
+
+.myClass .RadGrid .rgAltRow {
+    background-color: lightgray;
+}
+
+.RadGrid_Default .rgCommandTable td {
+    border: 0 !important;
+    padding: 2px 7px !important;
+    height: 62px !important;
+    background: #F4F6F8 !important;
+    border: #EAE9E9 !important;
+}
+
+caption {
+    display: none !important;
+}
+
+.rgHeader {
+    height: 45px !important;
+    text-align: center !important;
+    background: white !important;
+    border-right: solid;
+    border-right-color: #EAE9E9 !important;
+}
+
+.rgRow {
+    height: 35px !important;
+    border-right: solid;
+    border-right-color: #EAE9E9 !important;
+}
+
+.rgPager {
+    background: white !important;
+}
+
+.RadGrid_Default td.rgPagerCell {
+    border: 1px solid !important;
+    border-color: #EAE9E9 #eee #eee !important;
+    border-right-width: 0 !important;
+}
+
+.RadGrid_Default .rgHeader, .RadGrid_Default th.rgResizeCol, .RadGrid_Default .rgHeaderWrapper {
+    border: 0 !important;
+    border-bottom: 1px solid #EAE9E9 !important;
+}
+
+.RadGrid_Default .rgAdd {
+    display: none !important;
+}
+
+#RadGrid_ScheduledRecurringPayments_ctl00_ctl02_ctl00_InitInsertButton {
+    display: none !important;
+}
+
+.RadGrid_Default .rgRefresh {
+    display: none !important;
+}
+
+#RadGrid_ScheduledRecurringPayments_ctl00_ctl02_ctl00_RebindGridButton {
+    display: none !important;
 }
