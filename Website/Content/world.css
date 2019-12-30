@@ -125,7 +125,7 @@ ul.rtsUL > li.rtsLI.rtsSelected  {
 }
 
 /*Daimaan*/
-.k-grid-header th.k-header {
+/*.k-grid-header th.k-header {
     text-align: center;
     background-color: #FF0099;
 }
@@ -136,7 +136,6 @@ ul.rtsUL > li.rtsLI.rtsSelected  {
 }
 
 .SelectedItem {
-    /*background-image: url(img/SelectedRow.gif);*/
     background-repeat: no-repeat;
     background-position: top right;
 }
@@ -213,4 +212,32 @@ caption {
 
 #RadGrid_ScheduledRecurringPayments_ctl00_ctl02_ctl00_RebindGridButton {
     display: none !important;
+}*/
+
+/*.rgPagerCell .rgWrap{
+    float:right !important;
+}*/
+.rgPagerCell{
+    float : right !important;
+}
+
+.class-status {
+    padding:5px;
+    /*border: 1px solid #F5A623;*/
+    border: 1.5px solid green;
+    border-radius: 15px;
+    /*color: red;*/
+    width: 179px;
+    height: 60px;
+    font-family: AvenirNext;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.31;
+    letter-spacing: normal;
+    /*color: #CE7200;*/
+    color: green;
+    text-align: center;
+    vertical-align: middle;
 }

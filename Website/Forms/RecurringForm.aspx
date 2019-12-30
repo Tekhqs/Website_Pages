@@ -10,6 +10,7 @@
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
     <link href="../Content/world.css" rel="stylesheet" />
     <link href="../kendo/Skins/BootstrapLite/TabStrip.Bootstrap.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -429,7 +430,7 @@
                                 </telerik:RadMultiPage>
                             </telerik:RadPageView>
                             <telerik:RadPageView runat="server" ID="RadPageView3">
-                                <div class="row container-fluid">
+                                <div class="container-fluid">
                                     <div class="row pb-4 pl-4">
                                         <div class="col-sm-2 col-md-2">
                                             <img class="btnFilterSchRecPay classFilterButton" src="../Content/Images/Filter.png" />
@@ -444,7 +445,7 @@
                                         </div>
                                     </div>
                                     <%--  Modified By DAN--%>
-                                    <div class="col-12 myClass">
+                                    <%--<div class="col-12 myClass">
                                         <div class="col-md-2 col-sm-2 pl-4" style="position: absolute; top: 9px;">
                                             <img src="../Content/Images/export.png" data-toggle='dropdown'>
                                             <ul id="ddlExportTransHist" class="dropdown-menu">
@@ -452,36 +453,72 @@
                                                 <hr>
                                                 <li id="Excel" value="Excel" class="dropdown-item ebiz-text">Export as Excel</li>
                                             </ul>
-                                        </div>
-                                        <telerik:RadGrid ID="RadGrid_ScheduledRecurringPayments" runat="server"
-                                            OnNeedDataSource="RadGrid_ScheduledRecurringPayments_NeedDataSource" AllowPaging="true">
-                                            <MasterTableView ClientDataKeyNames="PaymentName" ShowHeader="true" CommandItemDisplay="Top" CssClass="RadTabStrip_Bootstrap" AlternatingItemStyle-BackColor="LightGray" ItemStyle-BackColor="White">
-                                                <%--<CommandItemSettings ShowAddNewRecordButton="false" ShowRefreshButton="false" ShowExportToExcelButton="true" ShowExportToCsvButton="true" />--%>
-                                                <PagerStyle Mode="NextPrevAndNumeric" VerticalAlign="Bottom" Position="Bottom" AlwaysVisible="true" Visible="true" />
-                                                <%-- <Columns>
-                                                    <telerik:GridBoundColumn UniqueName="PaymentName" DataField="PaymentName" HeaderText="Payment Name" ReadOnly="true">
-                                                    </telerik:GridBoundColumn>
-                                                    <telerik:GridBoundColumn UniqueName="PaymentName" DataField="RecurringDates" HeaderText="Recurring Dates" ColumnEditorID="GridTextBoxEditor">
-                                                    </telerik:GridBoundColumn>
-                                                    <telerik:GridBoundColumn UniqueName="PaymentName" DataField="Frequency" HeaderText="Frequency" ColumnEditorID="GridTextBoxEditor">
-                                                    </telerik:GridBoundColumn>
-                                                    <telerik:GridBoundColumn UniqueName="PaymentName" DataField="Amount" HeaderText="Amount" ColumnEditorID="GridTextBoxEditor">
-                                                    </telerik:GridBoundColumn>
-                                                    <telerik:GridBoundColumn DataField="MonthlyPaymentDay" UniqueName="MonthlyPaymentDay" HeaderText="Monthly Payment Day" ColumnEditorID="GridTextBoxEditor">
-                                                    </telerik:GridBoundColumn>
-                                                    <telerik:GridBoundColumn DataField="Cardholder" UniqueName="Cardholder" HeaderText="Cardholder" ColumnEditorID="GridTextBoxEditor">
-                                                    </telerik:GridBoundColumn>
-                                                    <telerik:GridBoundColumn DataField="MethodLast4Digits" UniqueName="MethodLast4Digits" HeaderText="Method&Last4Digits" ColumnEditorID="GridTextBoxEditor">
-                                                    </telerik:GridBoundColumn>
-                                                    <telerik:GridBoundColumn DataField="Status"  UniqueName="Status" HeaderText="Status" ColumnEditorID="GridTextBoxEditor">
-                                                    </telerik:GridBoundColumn>
-                                                    <telerik:GridEditCommandColumn HeaderText="Edit">
-                                                        <HeaderStyle Width="70px" />
-                                                    </telerik:GridEditCommandColumn>
-                                                </Columns>--%>
-                                            </MasterTableView>
-                                        </telerik:RadGrid>
-                                    </div>
+                                        </div>--%>
+                                    <telerik:RadGrid ID="RadGrid_ScheduledRecurringPayments" runat="server"
+                                        OnNeedDataSource="GetScheduledRecurringPayments" AllowPaging="true" Font-Size="14px">
+                                        <MasterTableView ClientDataKeyNames="PaymentName" Font-Size="14px" ShowHeader="true" CommandItemDisplay="Top" AutoGenerateColumns="false" PageSize="10"
+                                            CssClass="RadTabStrip_Bootstrap" AlternatingItemStyle-BackColor="LightGray" ItemStyle-BackColor="White"
+                                            CommandItemStyle-Height="70px">
+                                            <%--<CommandItemSettings ShowAddNewRecordButton="false" ShowRefreshButton="false" ShowExportToExcelButton="true" ShowExportToCsvButton="true" />--%>
+                                            <PagerStyle Mode="NextPrevAndNumeric" PageSizes="10" VerticalAlign="Bottom" Position="Bottom" HorizontalAlign="Right"
+                                                AlwaysVisible="true" Visible="true" EnableAllOptionInPagerComboBox="true" />
+                                            <CommandItemSettings ShowRefreshButton="false" ShowAddNewRecordButton="false" />
+                                            <CommandItemTemplate>
+                                                <div class="row">
+                                                    <div class="col-3 pl-4">
+                                                        <span>
+                                                            <telerik:RadCheckBox ID="RadGridHeaderCheckBox" runat="server" Skin="Bootstrap"></telerik:RadCheckBox>
+                                                        </span>
+                                                        <span>
+                                                            <telerik:RadDropDownList ID="RadGridHeaderDropDown" runat="server" Skin="Bootstrap" Width="145px">
+                                                                <Items>
+                                                                    <telerik:DropDownListItem Text="Export" Value="csv" Selected="true" />
+                                                                    <telerik:DropDownListItem Text="Export as .csv" Value="csv" />
+                                                                    <telerik:DropDownListItem Text="Export as Excel" Value="Excel" />
+                                                                </Items>
+                                                            </telerik:RadDropDownList>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </CommandItemTemplate>
+                                            <ItemStyle Height="50px" CssClass="active" />
+                                            <AlternatingItemStyle CssClass="active" Height="50px" />
+                                            <FooterStyle Height="500px" />
+                                            <HeaderStyle Height="50px" Font-Bold="true" />
+                                            <Columns>
+                                                <%--<telerik:GridClientSelectColumn UniqueName="IsPayment"></telerik:GridClientSelectColumn>
+                                                <telerik:GridCheckBoxColumn UniqueName="IsPayment" DataField="IsPayment"></telerik:GridCheckBoxColumn>--%>
+                                                <telerik:GridTemplateColumn>
+                                                    <ItemTemplate>
+                                                        <asp:CheckBox ID="CheckBox1" runat="server" Skin="Bootstrap" />
+                                                    </ItemTemplate>
+                                                </telerik:GridTemplateColumn>
+                                                <telerik:GridBoundColumn UniqueName="CustomerFullName" DataField="CustomerFullName" ItemStyle-ForeColor="Blue" HeaderText="Customer" ReadOnly="true">
+                                                </telerik:GridBoundColumn>
+                                                <telerik:GridBoundColumn UniqueName="PaymentName" DataField="PaymentName" HeaderText="Payment Name" ColumnEditorID="GridTextBoxEditor">
+                                                </telerik:GridBoundColumn>
+                                                <telerik:GridBoundColumn UniqueName="RecurringDates" DataField="RecurringDates" HeaderText="Recurring Dates" ColumnEditorID="GridTextBoxEditor">
+                                                </telerik:GridBoundColumn>
+                                                <telerik:GridBoundColumn UniqueName="Frequency" DataField="Frequency" HeaderText="Frequency" ColumnEditorID="GridTextBoxEditor">
+                                                </telerik:GridBoundColumn>
+                                                <telerik:GridBoundColumn UniqueName="Amount" DataField="Amount" DataFormatString="{0:C}" DataType="System.Decimal" HeaderText="Amount" ColumnEditorID="GridTextBoxEditor">
+                                                </telerik:GridBoundColumn>
+                                                <telerik:GridBoundColumn DataField="Cardholder" UniqueName="Cardholder" HeaderText="Cardholder" ColumnEditorID="GridTextBoxEditor">
+                                                </telerik:GridBoundColumn>
+                                                <telerik:GridBoundColumn DataField="MethodAndLast4Digits" UniqueName="MethodAndLast4Digits" HeaderText="Method&Last4Digits" ColumnEditorID="GridTextBoxEditor">
+                                                </telerik:GridBoundColumn>
+                                                <%--<telerik:GridBoundColumn DataField="Status" UniqueName="Status" HeaderText="Status" ColumnEditorID="GridTextBoxEditor"></telerik:GridBoundColumn>--%>
+                                                <telerik:GridTemplateColumn DataField="Status" HeaderText="Status" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" >
+                                                    <ItemTemplate>
+                                                        <asp:Label ID="lblStatus" CssClass="class-status" runat="server" Text='<%#Eval("Status") %>'></asp:Label>
+                                                    </ItemTemplate>
+                                                    <ClientItemTemplate></ClientItemTemplate>
+                                                </telerik:GridTemplateColumn>
+                                                <telerik:GridEditCommandColumn ItemStyle-ForeColor="Blue" />
+                                            </Columns>
+                                        </MasterTableView>
+                                    </telerik:RadGrid>
+                                    <%-- </div>--%>
                                 </div>
                             </telerik:RadPageView>
 
@@ -679,10 +716,11 @@
                                             </div>
                                             <div class="col-5 offset-1 pr-4">
                                                 <div class="form-group float-right">
-                                                    <telerik:RadButton ID="btnReview" runat="server"
+                                                    <%--<telerik:RadButton ID="btnReview" runat="server"
                                                         Skin="Bootstrap" BorderColor="#1492DB" BackColor="White" ForeColor="#1492DB"
                                                         Width="200px" Text="Review Payment Schedule" TabIndex="4">
-                                                    </telerik:RadButton>
+                                                    </telerik:RadButton>--%>
+                                                    <input type="button" id="btnReview" data-toggle="modal" value="Review Payment Schedule" class="btn" data-target="#id-Modal" style="border-color: #1492DB; background-color: White; color: #1492DB;" />
                                                 </div>
                                             </div>
                                         </div>
@@ -1254,6 +1292,105 @@
                 </div>
             </div>
         </div>
+
+
+        <div class="modal modal-font" id="id-Modal" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog modal-xl modal-dialog-centered" data-easein="shake">
+                <%--<div class="modal-content" style="max-width: 700px; height: 600px;">--%>
+                <div class="modal-content" style="height: 720px;">
+                    <div class="success-Rectangle"></div>
+                    <!-- Modal Header -->
+                    <div class="modal-header border-0">
+                       <h4 class="modal-title ebiz-page-header class-preivew p-3">Preview of Recurring Payment Schedule</h4>
+                        <button type="button" class="close" data-target="#id-Modal" data-toggle="modal">&times;</button>
+                        
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body" style="margin-left: 35px;">
+                        <div class="row">
+                            <div class="col-4">
+                                <label>Customer:</label>
+                                <label>Rebecca Smith : 1236325</label>
+                            </div>
+                            <div class="col-4 offset-2">
+                                <label>Payment Amount:</label>
+                                <label>$10236</label>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <label>Sub customer ID : </label>
+                                <label>12349</label>
+                            </div>
+                            <div class="col-4 offset-2">
+                                <label>Recurring Duration : </label>
+                                <label>11/12/19 - 03/12/20</label>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-4">
+                                <label>Recurring Schedule Name : </label>
+                                <label>Monthly service fee</label>
+                            </div>
+                            <div class="col-4 offset-2">
+                                <label>Number of Payments : </label>
+                                <label>5</label>
+                            </div>
+
+                        </div>
+                        <div class="row">
+
+                            <div class="col-4">
+                                <label>Payment Frequency : </label>
+                                <label>Repeat once a month</label>
+                            </div>
+                            <div class="col-4 offset-2">
+                            </div>
+
+                        </div>
+
+                        <div class="grid mt-4">
+                            <telerik:RadGrid ID="RadGrid1" runat="server"
+                                OnNeedDataSource="GetReviewRecurringPayments" AllowPaging="true" Font-Size="14px">
+                                <MasterTableView ClientDataKeyNames="PaymentName" Font-Size="14px" ShowHeader="true" d AutoGenerateColumns="false" PageSize="10"
+                                    CssClass="RadTabStrip_Bootstrap" AlternatingItemStyle-BackColor="LightGray" ItemStyle-BackColor="White"
+                                    CommandItemStyle-Height="70px">
+                                    <PagerStyle Mode="NextPrevAndNumeric" PageSizes="10" VerticalAlign="Bottom" Position="Bottom" HorizontalAlign="Right"
+                                        AlwaysVisible="true" Visible="true" EnableAllOptionInPagerComboBox="true" />
+                                    <CommandItemSettings ShowRefreshButton="false" ShowAddNewRecordButton="false" />
+                                    <ItemStyle Height="50px" CssClass="active" />
+                                    <AlternatingItemStyle CssClass="active" Height="50px" />
+                                    <FooterStyle Height="500px" />
+                                    <HeaderStyle Height="50px" Font-Bold="true" />
+                                    <Columns>
+                                        <telerik:GridBoundColumn UniqueName="ID" DataField="ID" HeaderText="" ColumnEditorID="GridTextBoxEditor">
+                                        </telerik:GridBoundColumn>
+                                        <telerik:GridBoundColumn UniqueName="PaymentDate" DataField="PaymentDate" HeaderText="Payment Date" ColumnEditorID="GridTextBoxEditor">
+                                        </telerik:GridBoundColumn>
+                                        <telerik:GridBoundColumn UniqueName="Amount" DataFormatString="{0:C}" DataType="System.Decimal" DataField="Amount" HeaderText="Recurring Amount" ColumnEditorID="GridTextBoxEditor">
+                                        </telerik:GridBoundColumn>
+                                        <telerik:GridBoundColumn DataField="Description" UniqueName="Description" HeaderText="Description" ColumnEditorID="GridTextBoxEditor">
+                                        </telerik:GridBoundColumn>
+                                        <telerik:GridBoundColumn DataField="Amount" UniqueName="Amount" DataFormatString="{0:C}" DataType="System.Decimal" HeaderText="Accumulated Amount" ColumnEditorID="GridTextBoxEditor">
+                                        </telerik:GridBoundColumn>
+                                    </Columns>
+                                </MasterTableView>
+                            </telerik:RadGrid>
+                        </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer justify-content-center border-0">
+                        <button id="id-Done" type="button" class="btn btn-primary" data-dismiss="modal" style="width: 87px">Done</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <script src="../Scripts/bootstrap.min.js"></script>
     </form>
 </body>
 </html>
