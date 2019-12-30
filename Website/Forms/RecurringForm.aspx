@@ -57,7 +57,7 @@
                                             <div class="form-group inner">
                                                 <span>
                                                     <label for="RadDropDownList1">Monthly Payment Day *</label></span>
-                                                <span class="pl-2">
+                                                <span>
                                                     <img src="../Content/Images/info.png" title="You can pay monthly payments" />
                                                 </span>
                                                 <telerik:RadDropDownList ID="RadDropDownList1" runat="server"
@@ -100,7 +100,7 @@
                                     <div class="col-12 inner">
 
                                         <telerik:RadCheckBox ID="RadCheckBox1" runat="server" Text="I agree to the above terms and condition" Skin="Bootstrap" Font-Size="Medium"></telerik:RadCheckBox>
-                                        <img src="../Content/Images/info.png" title="Agreement of 5-20 per month selection"/>
+                                        <img src="../Content/Images/info.png" title="Agreement of 5-20 per month selection" />
                                     </div>
                                 </div>
 
@@ -176,7 +176,7 @@
                                                                             Display="Dynamic"
                                                                             ControlToValidate="txtCardNumber"
                                                                             ErrorMessage="Card Number is required" ForeColor="Red">
-                                                                    </asp:RequiredFieldValidator>
+                                                                        </asp:RequiredFieldValidator>
                                                                     </div>
                                                                     <div class="form-group col-12 col-lg-5 offset-lg-1">
                                                                         <label class="ebiz-label">Billing Address *</label>
@@ -189,7 +189,7 @@
                                                                             Display="Dynamic"
                                                                             ControlToValidate="txtBillingAddress"
                                                                             ErrorMessage="Billing Address is required" ForeColor="Red">
-                                                                    </asp:RequiredFieldValidator>
+                                                                        </asp:RequiredFieldValidator>
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-row">
@@ -204,7 +204,7 @@
                                                                             Display="Dynamic"
                                                                             ControlToValidate="txtCardHolderName"
                                                                             ErrorMessage="Card Holder Name is required" ForeColor="Red">
-                                                                    </asp:RequiredFieldValidator>
+                                                                        </asp:RequiredFieldValidator>
                                                                     </div>
                                                                     <div class="form-group col-12 col-lg-5 offset-lg-1">
                                                                         <div class="form-group col-8 pl-0 d-inline-block">
@@ -218,7 +218,7 @@
                                                                                 Display="Dynamic"
                                                                                 ControlToValidate="txtZipCode"
                                                                                 ErrorMessage="Zip Code is required" ForeColor="Red">
-                                                                        </asp:RequiredFieldValidator>
+                                                                            </asp:RequiredFieldValidator>
                                                                         </div>
                                                                         <div class="form-group col-4 float-right pt-4">
                                                                             <telerik:RadCheckBox ID="chkAllowSaveCC" runat="server" Text="Save card" Skin="Bootstrap" Font-Size="14px" TabIndex="10"></telerik:RadCheckBox>
@@ -283,7 +283,7 @@
                                                                             <span>
                                                                                 <label class="ebiz-label">Security Code *</label></span>
                                                                             <span class="pl-2">
-                                                                                <img src="../Content/Images/info.png" title="It is the Security code of 3 digit on the back side of Card"/></span>
+                                                                                <img src="../Content/Images/info.png" title="It is the Security code of 3 digit on the back side of Card" /></span>
                                                                             <telerik:RadToolTip ID="RadToolTip1" runat="server" Position="BottomRight" HideEvent="LeaveToolTip"></telerik:RadToolTip>
                                                                         </div>
                                                                         <div class="col-12 pl-0">
@@ -295,7 +295,7 @@
                                                                             Display="Dynamic"
                                                                             ControlToValidate="txtSecurityCode"
                                                                             ErrorMessage="Security Code is required" ForeColor="Red">
-                                                                    </asp:RequiredFieldValidator>
+                                                                        </asp:RequiredFieldValidator>
                                                                     </div>
                                                                     <div class="form-group col-12 col-lg-5 offset-lg-1">
                                                                         <div class="col-12 pl-0">
@@ -432,7 +432,7 @@
                             </telerik:RadPageView>
                             <telerik:RadPageView runat="server" ID="RadPageView3">
                                 <div class="container-fluid">
-                                    <div class="row pb-4 pl-4">
+                                    <%--<div class="row pb-4 pl-4">
                                         <div class="col-sm-2 col-md-2">
                                             <img class="btnFilterSchRecPay classFilterButton" src="../Content/Images/Filter.png" />
                                         </div>
@@ -443,6 +443,71 @@
                                                 <div class="divLblSchRecPay"></div>
                                             </div>
 
+                                        </div>
+                                    </div>--%>
+                                    <div class="row" style="padding-top: 30px">
+                                    <div class="col-sm-2 col-md-2">
+                                        <img class="btnFilterSchRecPay classFilterButton" src="../Content/Images/Filter.png" />
+                                    </div>
+                                    <div class="col-sm-8 col-md-8 d-flex">
+                                        <div class="selectedTreeViewFields FiltersContainer">
+                                            <div class="divLblResult"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                    <div class="row pb-4 pl-4 pt-3">
+                                        <div class="d-flex col-sm-12">
+                                            <div class="col-sm-2 col-md-2">
+                                                <div id="divFil" class="divFilter divFilterTranHis d-none">
+                                                    <div class="divHeader d-flex">
+                                                        <div style="line-height: 50px;">
+                                                            <button type="button" class="btn  btn-sm btnClearTranHistSubmit divHeaderbtnClear">Clear</button>
+                                                            <label class="divHeaderlblFilter">Filters</label>
+                                                            <button id="btnClearTranHistSubmit" type="button" class="btn btn-sm btnTranHistSubmit divHeaderlblDone">Done</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="divBody">
+                                                        <div class="divContent">
+                                                            <div class="masterDivTransactionType" style="padding-left: 30px;">
+                                                                <input type="checkbox" id="TransactionType" name="ChkbxTransactionType" class="form-check-input ChkbxTransactionType PTransactionType FilterChkbx FilterChkbxTxt" value="" /><label for="Result" class="lblchkbox">Customer</label>
+                                                                <div id="divTransactionType" style="padding-left: 20px;">
+                                                                    <input type="checkbox" id="Sale" class="form-check-input ChkbxSale FilterChkbx" name="ChkbxTransactionType" value="Sale" /><label for="Sale" class="lblchkbox">Sale</label>
+                                                                    <input type="checkbox" id="Credit" class="form-check-input ChkbxCredit FilterChkbx" name="ChkbxTransactionType" value="Credit" /><label for="Credit" class="lblchkbox">Credit</label>
+                                                                    <input type="checkbox" id="Refund" class="form-check-input ChkbxRefund FilterChkbx" name="ChkbxTransactionType" value="Refund" /><label for="Refund" class="lblchkbox">Refund</label>
+                                                                    <input type="checkbox" id="Void" class="form-check-input ChkbxVoid FilterChkbx" name="ChkbxTransactionType" value="Voided Sale" /><label for="Void" class="lblchkbox">Voided Sale</label>
+                                                                    <input type="checkbox" id="AuthOnly" class="form-check-input ChkbxAuthOnly FilterChkbx" name="ChkbxTransactionType" value="Auth Only" /><label for="AuthOnly" class="lblchkbox">Auth Only</label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- End Transaction Type Div -->
+                                                            <hr />
+                                                            <div class="masterDivCardType" style="padding-left: 30px">
+                                                                <input type="checkbox" name="ChkbxCardType" id="CardType" class="form-check-input ChkbxCardType PCardType FilterChkbx" /><label for="CardType" class="lblchkbox">Payment Name</label>
+                                                                <div id="divCardType" style="padding-left: 20px;">
+                                                                    <input type="checkbox" id="Visa" class="form-check-input ChkbxVisa FilterChkbx" name="ChkbxCardType" value="V" /><label for="Visa" class="lblchkbox">Visa</label>
+                                                                    <input type="checkbox" id="MasterCard" class="form-check-input ChkbxMC FilterChkbx" name="ChkbxCardType" value="M" /><label for="MasterCard" class="lblchkbox">MC (MasterCard)</label>
+                                                                    <input type="checkbox" id="Discover" class="form-check-input ChkbxDisc FilterChkbx" name="ChkbxCardType" value="DS" /><label for="Discover" class="lblchkbox">Disc (Discover)</label>
+                                                                    <input type="checkbox" id="Amex" class="form-check-input ChkbxAmex FilterChkbx" name="ChkbxCardType" value="A" /><label for="Amex" class="lblchkbox">Amex</label>
+                                                                    <input type="checkbox" id="Diners" class="form-check-input ChkbxDiners FilterChkbx" name="ChkbxCardType" value="DN" /><label for="Diners" class="lblchkbox">Diners Club</label>
+                                                                    <input type="checkbox" id="JCB" class="form-check-input ChkbxJCB FilterChkbx" name="ChkbxCardType" value="J" /><label for="JCB" class="lblchkbox">JCB</label>
+                                                                </div>
+                                                            </div>
+                                                            <!-- End Card Type -->
+                                                            <hr />
+                                                            <div class="masterDivCardLast4Digit" style="padding-left: 30px">
+                                                                <input type="checkbox" name="ChkbxCardLast4Digit" id="CardLast4Digit12" class="form-check-input ChkbxCardLast4Digit PCardLast4Digit FilterChkbx" value="" /><label for="CardMethod" class="lblchkbox">Frequency</label>
+                                                                <div id="divCardLast4Digit" class="divTxtDdl">
+                                                                    <select class="ddlCardLast4Digit ddlControls">
+                                                                        <option value="eq">is equal to</option>
+                                                                        <option value="contains">contains</option>
+                                                                    </select>
+                                                                    <input type="text" id="CardLast4Digit123" name="CardLast4Digit" class="txtCardLast4Digit txtControls" />
+                                                                </div>
+                                                            </div>
+                                                            <!-- End Card Last 4 Digit -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <%--  Modified By DAN--%>
@@ -455,10 +520,10 @@
                                                 <li id="Excel" value="Excel" class="dropdown-item ebiz-text">Export as Excel</li>
                                             </ul>
                                         </div>--%>
-                                    <telerik:RadGrid ID="RadGrid_ScheduledRecurringPayments" runat="server"
+                                    <telerik:RadGrid ID="RadGrid_ScheduledRecurringPayments" runat="server" AllowSorting="true" GridLines="Vertical" Skin="Bootstrap"
                                         OnNeedDataSource="GetScheduledRecurringPayments" AllowPaging="true" Font-Size="14px">
                                         <MasterTableView ClientDataKeyNames="PaymentName" Font-Size="14px" ShowHeader="true" CommandItemDisplay="Top" AutoGenerateColumns="false" PageSize="10"
-                                            CssClass="RadTabStrip_Bootstrap" AlternatingItemStyle-BackColor="LightGray" ItemStyle-BackColor="White"
+                                            CssClass="RadTabStrip_Bootstrap" AlternatingItemStyle-BackColor="LightGray" ItemStyle-BackColor="White" GridLines="Vertical"
                                             CommandItemStyle-Height="70px">
                                             <%--<CommandItemSettings ShowAddNewRecordButton="false" ShowRefreshButton="false" ShowExportToExcelButton="true" ShowExportToCsvButton="true" />--%>
                                             <PagerStyle Mode="NextPrevAndNumeric" PageSizes="10" VerticalAlign="Bottom" Position="Bottom" HorizontalAlign="Right"
@@ -485,7 +550,7 @@
                                             <ItemStyle Height="50px" CssClass="active" />
                                             <AlternatingItemStyle CssClass="active" Height="50px" />
                                             <FooterStyle Height="500px" />
-                                            <HeaderStyle Height="50px" Font-Bold="true" />
+                                            <HeaderStyle Height="50px" Font-Bold="true" BorderWidth="0" />
                                             <Columns>
                                                 <%--<telerik:GridClientSelectColumn UniqueName="IsPayment"></telerik:GridClientSelectColumn>
                                                 <telerik:GridCheckBoxColumn UniqueName="IsPayment" DataField="IsPayment"></telerik:GridCheckBoxColumn>--%>
@@ -568,7 +633,7 @@
                                                 <div class="form-group inner">
                                                     <label for="RadDropDownList1">Monthly Payment Day *</label>
                                                     <span class="pl-2">
-                                                        <img src="../Content/Images/info.png" title="You can pay monthly payments"/>
+                                                        <img src="../Content/Images/info.png" title="You can pay monthly payments" />
                                                     </span>
                                                     <telerik:RadDropDownList ID="RadDropDownList9" runat="server"
                                                         Skin="Bootstrap" Width="100%">
@@ -657,7 +722,7 @@
                                                     <div class="col-lg-4 col-6">
                                                         <div class="form-group inner">
                                                             <label>Start Date *</label><span class="pl-2">
-                                                                <img src="../Content/Images/info.png" title="Start date of the Recurring Payment"/></span>
+                                                                <img src="../Content/Images/info.png" title="Start date of the Recurring Payment" /></span>
                                                             <telerik:RadDateTimePicker ID="txtStartDate" runat="server" Culture="English (United States)"
                                                                 TimePopupButton-Visible="false" Skin="Bootstrap" Width="100%">
                                                             </telerik:RadDateTimePicker>
@@ -958,7 +1023,7 @@
                                                                             Display="Dynamic"
                                                                             ControlToValidate="txtCardNumber"
                                                                             ErrorMessage="Card Number is required" ForeColor="Red">
-                                                                    </asp:RequiredFieldValidator>
+                                                                        </asp:RequiredFieldValidator>
                                                                     </div>
                                                                     <div class="form-group col-12 col-lg-5 offset-lg-1">
                                                                         <label class="ebiz-label">Billing Address *</label>
@@ -971,7 +1036,7 @@
                                                                             Display="Dynamic"
                                                                             ControlToValidate="txtBillingAddress"
                                                                             ErrorMessage="Billing Address is required" ForeColor="Red">
-                                                                    </asp:RequiredFieldValidator>
+                                                                        </asp:RequiredFieldValidator>
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-row">
@@ -986,7 +1051,7 @@
                                                                             Display="Dynamic"
                                                                             ControlToValidate="txtCardHolderName"
                                                                             ErrorMessage="Card Holder Name is required" ForeColor="Red">
-                                                                    </asp:RequiredFieldValidator>
+                                                                        </asp:RequiredFieldValidator>
                                                                     </div>
                                                                     <div class="form-group col-12 col-lg-5 offset-lg-1">
                                                                         <div class="form-group col-8 pl-0 d-inline-block">
@@ -1000,7 +1065,7 @@
                                                                                 Display="Dynamic"
                                                                                 ControlToValidate="txtZipCode"
                                                                                 ErrorMessage="Zip Code is required" ForeColor="Red">
-                                                                        </asp:RequiredFieldValidator>
+                                                                            </asp:RequiredFieldValidator>
                                                                         </div>
                                                                         <div class="form-group col-4 float-right pt-4">
                                                                             <telerik:RadCheckBox ID="RadCheckBox2" runat="server" Text="Save card" Skin="Bootstrap" Font-Size="14px" TabIndex="10"></telerik:RadCheckBox>
@@ -1065,7 +1130,7 @@
                                                                             <span>
                                                                                 <label class="ebiz-label">Security Code *</label></span>
                                                                             <span class="pl-2">
-                                                                                <img src="../Content/Images/info.png" title="It is the Security code of 3 digit on the back side of Card"/></span>
+                                                                                <img src="../Content/Images/info.png" title="It is the Security code of 3 digit on the back side of Card" /></span>
                                                                             <telerik:RadToolTip ID="RadToolTip2" runat="server" Position="BottomRight" HideEvent="LeaveToolTip"></telerik:RadToolTip>
                                                                         </div>
                                                                         <div class="col-12 pl-0">
@@ -1077,7 +1142,7 @@
                                                                             Display="Dynamic"
                                                                             ControlToValidate="txtSecurityCode"
                                                                             ErrorMessage="Security Code is required" ForeColor="Red">
-                                                                    </asp:RequiredFieldValidator>
+                                                                        </asp:RequiredFieldValidator>
                                                                     </div>
                                                                     <div class="form-group col-12 col-lg-5 offset-lg-1">
                                                                         <div class="col-12 pl-0">
@@ -1348,26 +1413,23 @@
                                 <label>Payment Frequency : </label>
                                 <label>Repeat once a month</label>
                             </div>
-                            <div class="col-4 offset-2">
-                            </div>
-
                         </div>
                         <div class="row">
                             <div class="col-12">
 
                                 <div class="grid mt-4">
-                                    <telerik:RadGrid ID="RadGrid1" runat="server"
+                                    <telerik:RadGrid ID="RadGrid1" runat="server" GridLines="Vertical" Skin="Bootstrap" BorderWidth="0"
                                         OnNeedDataSource="GetReviewRecurringPayments" AllowPaging="true" Font-Size="14px">
                                         <MasterTableView ClientDataKeyNames="PaymentName" Font-Size="14px" ShowHeader="true" AutoGenerateColumns="false" PageSize="10"
                                             CssClass="RadTabStrip_Bootstrap" AlternatingItemStyle-BackColor="LightGray" ItemStyle-BackColor="White"
-                                            CommandItemStyle-Height="70px">
+                                            CommandItemStyle-Height="70px" GridLines="Vertical">
                                             <PagerStyle Mode="NextPrevAndNumeric" PageSizes="10" VerticalAlign="Bottom" Position="Bottom" HorizontalAlign="Right"
                                                 AlwaysVisible="true" Visible="true" EnableAllOptionInPagerComboBox="true" />
                                             <CommandItemSettings ShowRefreshButton="false" ShowAddNewRecordButton="false" />
                                             <ItemStyle Height="50px" CssClass="active" />
                                             <AlternatingItemStyle CssClass="active" Height="50px" />
-                                            <FooterStyle Height="500px" />
-                                            <HeaderStyle Height="50px" Font-Bold="true" />
+                                            <FooterStyle />
+                                            <HeaderStyle Height="50px" Font-Bold="true" BorderWidth="0" />
                                             <Columns>
                                                 <telerik:GridBoundColumn UniqueName="ID" DataField="ID" HeaderText="" ColumnEditorID="GridTextBoxEditor">
                                                 </telerik:GridBoundColumn>
@@ -1389,22 +1451,34 @@
 
                     <!-- Modal footer -->
                     <div class="modal-footer border-0">
-                     
-                           
-                                <label class="font-weight-bold">
-                                    Total Payment Amount $5,035.00
-                                </label>
-                                <button id="id-Done" type="button" class="btn" data-dismiss="modal" style="border-color: #1492DB; background-color: White; color: #1492DB;">Return to Creating Schedule</button>
-                           
-                </div>
 
+
+                        <label class="font-weight-bold">
+                            Total Payment Amount $5,035.00
+                        </label>
+                        <button id="id-Done" type="button" class="btn" data-dismiss="modal" style="border-color: #1492DB; background-color: White; color: #1492DB;">Return to Creating Schedule</button>
+
+                    </div>
+
+                </div>
             </div>
         </div>
-        </div>
+        <script src="../Scripts/jquery-3.0.0.min.js"></script>
         <script src="../Scripts/bootstrap.min.js"></script>
-         <telerik:RadToolTipManager RenderMode="Lightweight" ID="RadToolTipManager1" runat="server" RelativeTo="Element"
-                               Position="MiddleRight" AutoTooltipify="true" ContentScrolling="Default" Width="150">
-    </telerik:RadToolTipManager>
+        <telerik:RadToolTipManager RenderMode="Lightweight" ID="RadToolTipManager1" runat="server" RelativeTo="Element"
+            Position="MiddleRight" AutoTooltipify="true" ContentScrolling="Default" Width="150">
+        </telerik:RadToolTipManager>
     </form>
+    <script type="text/javascript">
+        $(document).on("click", ".btnFilterSchRecPay", function (e) {
+            $(".divFilterTranHis").removeClass("d-none");
+            $(".divFilterTranHis").slideToggle("slow");
+            $("#divTransactionType").hide();
+            $("#divCardType").hide();
+            $("#divCardLast4Digit").hide();
+            $("#divCardHolder").hide();
+            $("#divCustomer").hide();
+        })
+        </script>
 </body>
 </html>

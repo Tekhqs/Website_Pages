@@ -222,14 +222,14 @@ caption {
 }
 
 .class-status {
-    padding:5px;
+    padding: 5px;
     /*border: 1px solid #F5A623;*/
-    border: 1.5px solid green;
+    border: 1.5px solid gray;
     border-radius: 15px;
     /*color: red;*/
     width: 179px;
     height: 60px;
-    font-family: AvenirNext;
+    /*font-family: AvenirNext;*/
     font-size: 14px;
     font-weight: bold;
     font-style: normal;
@@ -237,7 +237,93 @@ caption {
     line-height: 1.31;
     letter-spacing: normal;
     /*color: #CE7200;*/
-    color: green;
+    color: gray;
     text-align: center;
     vertical-align: middle;
 }
+
+.divFilter {
+    width: 251px;
+    box-shadow: 1px 3px 7px 0 rgba(155, 155, 155, 0.51);
+    border-radius: 3px;
+    position: absolute;
+    background-color: #fff;
+    z-index: 999 !important;
+    top: 0;
+    left: 0;
+    font-size: 14px;
+    font-family: AvenirNext;
+    margin-bottom: 30px;
+}
+
+    .divFilter .divHeader {
+        width: 251px;
+        height: 50px;
+        border-radius: 3px;
+        box-shadow: 0 -1px 7px 0 rgba(0, 0, 0, 0.11);
+        background-color: var(--table-header);
+    }
+
+        .divFilter .divHeader .divHeaderlblDone {
+            width: 60px;
+            height: 31px;
+            border-radius: 3px;
+            background-color: var(--ebiz-turq);
+        }
+
+        .divFilter .divHeader .divHeaderbtnClear {
+            width: 53px;
+            height: 31px;
+            background-color: #F4F6F8;
+            color: #7C8895;
+            margin-left: 10px;
+            border-radius: 3px;
+            border: solid 1px #C4CDD5;
+        }
+
+        .divFilter .divHeader .divHeaderlblFilter, .divHeaderlblDone {
+            margin-left: 37px;
+        }
+
+    .divFilter .divBody .divContent {
+        margin-top: 25px;
+        margin-bottom: 20px;
+    }
+
+    .divFilter .divBody .FilterChkbx {
+        width: 16px;
+        height: 16px;
+        border-radius: 3px;
+        box-shadow: 0 1px 0 0 rgba(22, 29, 37, 0.05);
+        background-image: linear-gradient(to bottom, #FFFFFF, #F9FAFB);
+    }
+
+    .divFilter .divBody .FilterChkbxTxt {
+        color: #212B36;
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.43;
+        letter-spacing: normal;
+    }
+
+    .divFilter .divBody .lblchkbox {
+        margin-left: 5px;
+        margin-top: 3px;
+    }
+
+    .divFilter .divBody .txtControls {
+        border: 1px solid #CECBCB;
+        width: 121px;
+        height: 32px;
+        margin-top: 10px
+    }
+
+    .divFilter .divBody .ddlControls {
+        border: 1px solid #CECBCB;
+        width: 157px;
+        height: 31px;
+        border-radius: 3px;
+        margin-top: 7px;
+    }
