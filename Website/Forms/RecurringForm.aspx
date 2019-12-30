@@ -54,11 +54,11 @@
                                 <div class="row pt-5 pl-3">
                                     <div class="col-12">
                                         <div class="col-4 col-lg-3 col-xl-2">
-                                            <div class="form-group">
+                                            <div class="form-group inner">
                                                 <span>
                                                     <label for="RadDropDownList1">Monthly Payment Day *</label></span>
                                                 <span class="pl-2">
-                                                    <img src="../Content/Images/info.png" />
+                                                    <img src="../Content/Images/info.png" title="You can pay monthly payments" />
                                                 </span>
                                                 <telerik:RadDropDownList ID="RadDropDownList1" runat="server"
                                                     Skin="Bootstrap" Width="250px">
@@ -97,10 +97,10 @@
                                 </div>
 
                                 <div class="row pt-4 pl-3">
-                                    <div class="col-12">
+                                    <div class="col-12 inner">
 
                                         <telerik:RadCheckBox ID="RadCheckBox1" runat="server" Text="I agree to the above terms and condition" Skin="Bootstrap" Font-Size="Medium"></telerik:RadCheckBox>
-                                        <img src="../Content/Images/info.png" />
+                                        <img src="../Content/Images/info.png" title="Agreement of 5-20 per month selection"/>
                                     </div>
                                 </div>
 
@@ -279,11 +279,11 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group col-6 col-lg-2">
-                                                                        <div class="d-flex" style="min-width: 150px;">
+                                                                        <div class="d-flex inner" style="min-width: 150px;">
                                                                             <span>
                                                                                 <label class="ebiz-label">Security Code *</label></span>
                                                                             <span class="pl-2">
-                                                                                <img src="../Content/Images/info.png" /></span>
+                                                                                <img src="../Content/Images/info.png" title="It is the Security code of 3 digit on the back side of Card"/></span>
                                                                             <telerik:RadToolTip ID="RadToolTip1" runat="server" Position="BottomRight" HideEvent="LeaveToolTip"></telerik:RadToolTip>
                                                                         </div>
                                                                         <div class="col-12 pl-0">
@@ -565,10 +565,10 @@
                                                 </asp:RequiredFieldValidator>
                                             </div>
                                             <div class="col-5 offset-1">
-                                                <div class="form-group">
+                                                <div class="form-group inner">
                                                     <label for="RadDropDownList1">Monthly Payment Day *</label>
                                                     <span class="pl-2">
-                                                        <img src="../Content/Images/info.png" />
+                                                        <img src="../Content/Images/info.png" title="You can pay monthly payments"/>
                                                     </span>
                                                     <telerik:RadDropDownList ID="RadDropDownList9" runat="server"
                                                         Skin="Bootstrap" Width="100%">
@@ -655,9 +655,9 @@
                                             <div class="col-5">
                                                 <div class="row">
                                                     <div class="col-lg-4 col-6">
-                                                        <div class="form-group">
+                                                        <div class="form-group inner">
                                                             <label>Start Date *</label><span class="pl-2">
-                                                                <img src="../Content/Images/info.png" /></span>
+                                                                <img src="../Content/Images/info.png" title="Start date of the Recurring Payment"/></span>
                                                             <telerik:RadDateTimePicker ID="txtStartDate" runat="server" Culture="English (United States)"
                                                                 TimePopupButton-Visible="false" Skin="Bootstrap" Width="100%">
                                                             </telerik:RadDateTimePicker>
@@ -1061,11 +1061,11 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group col-6 col-lg-2">
-                                                                        <div class="d-flex" style="min-width: 150px;">
+                                                                        <div class="d-flex inner" style="min-width: 150px;">
                                                                             <span>
                                                                                 <label class="ebiz-label">Security Code *</label></span>
                                                                             <span class="pl-2">
-                                                                                <img src="../Content/Images/info.png" /></span>
+                                                                                <img src="../Content/Images/info.png" title="It is the Security code of 3 digit on the back side of Card"/></span>
                                                                             <telerik:RadToolTip ID="RadToolTip2" runat="server" Position="BottomRight" HideEvent="LeaveToolTip"></telerik:RadToolTip>
                                                                         </div>
                                                                         <div class="col-12 pl-0">
@@ -1402,6 +1402,9 @@
         </div>
         </div>
         <script src="../Scripts/bootstrap.min.js"></script>
+         <telerik:RadToolTipManager RenderMode="Lightweight" ID="RadToolTipManager1" runat="server" RelativeTo="Element"
+                               Position="MiddleRight" AutoTooltipify="true" ContentScrolling="Default" Width="150">
+    </telerik:RadToolTipManager>
     </form>
 </body>
 </html>
