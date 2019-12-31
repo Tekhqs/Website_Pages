@@ -499,6 +499,15 @@ namespace Website.Forms {
         protected global::Telerik.Web.UI.RadPageView RadPageView3;
         
         /// <summary>
+        /// RadGridHeaderDropDown123 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadDropDownList RadGridHeaderDropDown123;
+        
+        /// <summary>
         /// RadGrid_ScheduledRecurringPayments control.
         /// </summary>
         /// <remarks>

@@ -304,14 +304,14 @@
                                                                                     <telerik:RadCheckBox ID="chkReceiptToCustomer" runat="server" Text="Send Receipt" CssClass="form-control" TabIndex="10" Skin="Bootstrap" Font-Size="14px"></telerik:RadCheckBox>
                                                                                 </label>
                                                                             </span>
-                                                                            <span class="float-right class-SeperatedComman pt-2">Separate additional emails with a comma</span>
+                                                                            <span class="float-right class-SeperatedComman pt-3">Separate additional emails with a comma</span>
                                                                             <div class="pl-4">
                                                                                 <telerik:RadTextBox ID="txtEmailcc" runat="server" Skin="Bootstrap" TabIndex="9" Width="100%"></telerik:RadTextBox>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="form-row pt-5">
+                                                                <div class="form-row pt-5 pb-4">
                                                                     <div class="offset-6 col-md-4 col-12">
                                                                         <telerik:RadButton ID="btnProcess" runat="server" Text="Create Recurring Payment" Skin="Bootstrap" BackColor="#1492DB" ForeColor="White" TabIndex="11" Width="100%" Height="30px"></telerik:RadButton>
                                                                     </div>
@@ -446,15 +446,15 @@
                                         </div>
                                     </div>--%>
                                     <div class="row" style="padding-top: 30px">
-                                    <div class="col-sm-2 col-md-2">
-                                        <img class="btnFilterSchRecPay classFilterButton" src="../Content/Images/Filter.png" />
-                                    </div>
-                                    <div class="col-sm-8 col-md-8 d-flex">
-                                        <div class="selectedTreeViewFields FiltersContainer">
-                                            <div class="divLblResult"></div>
+                                        <div class="col-sm-2 col-md-2">
+                                            <img class="btnFilterSchRecPay classFilterButton" src="../Content/Images/Filter.png" />
+                                        </div>
+                                        <div class="col-sm-8 col-md-8 d-flex">
+                                            <div class="selectedTreeViewFields FiltersContainer">
+                                                <div class="divLblResult"></div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
                                     <div class="row pb-4 pl-4 pt-3">
                                         <div class="d-flex col-sm-12">
                                             <div class="col-sm-2 col-md-2">
@@ -520,12 +520,18 @@
                                                 <li id="Excel" value="Excel" class="dropdown-item ebiz-text">Export as Excel</li>
                                             </ul>
                                         </div>--%>
+                                    <telerik:RadDropDownList ID="RadGridHeaderDropDown123" OnSelectedIndexChanged="RadGridHeaderDropDown123_SelectedIndexChanged" runat="server" Skin="Bootstrap" Width="145px">
+                                        <Items>
+                                            <telerik:DropDownListItem Text="Export" Value="csv" Selected="true" />
+                                            <telerik:DropDownListItem Text="Export as .csv" Value="csv" />
+                                            <telerik:DropDownListItem Text="Export as Excel" Value="Xlsx" />
+                                        </Items>
+                                    </telerik:RadDropDownList>
                                     <telerik:RadGrid ID="RadGrid_ScheduledRecurringPayments" runat="server" AllowSorting="true" GridLines="Vertical" Skin="Bootstrap"
                                         OnNeedDataSource="GetScheduledRecurringPayments" AllowPaging="true" Font-Size="14px">
                                         <MasterTableView ClientDataKeyNames="PaymentName" Font-Size="14px" ShowHeader="true" CommandItemDisplay="Top" AutoGenerateColumns="false" PageSize="10"
                                             CssClass="RadTabStrip_Bootstrap" AlternatingItemStyle-BackColor="LightGray" ItemStyle-BackColor="White" GridLines="Vertical"
                                             CommandItemStyle-Height="70px">
-                                            <%--<CommandItemSettings ShowAddNewRecordButton="false" ShowRefreshButton="false" ShowExportToExcelButton="true" ShowExportToCsvButton="true" />--%>
                                             <PagerStyle Mode="NextPrevAndNumeric" PageSizes="10" VerticalAlign="Bottom" Position="Bottom" HorizontalAlign="Right"
                                                 AlwaysVisible="true" Visible="true" EnableAllOptionInPagerComboBox="true" />
                                             <CommandItemSettings ShowRefreshButton="false" ShowAddNewRecordButton="false" />
@@ -536,11 +542,11 @@
                                                             <telerik:RadCheckBox ID="RadGridHeaderCheckBox" runat="server" Skin="Bootstrap"></telerik:RadCheckBox>
                                                         </span>
                                                         <span>
-                                                            <telerik:RadDropDownList ID="RadGridHeaderDropDown" runat="server" Skin="Bootstrap" Width="145px">
+                                                            <telerik:RadDropDownList ID="RadGridHeaderDropDown" OnItemSelected="RadGridHeaderDropDown_ItemSelected" OnSelectedIndexChanged="RadGridHeaderDropDown_SelectedIndexChanged" runat="server" Skin="Bootstrap" Width="145px">
                                                                 <Items>
                                                                     <telerik:DropDownListItem Text="Export" Value="csv" Selected="true" />
                                                                     <telerik:DropDownListItem Text="Export as .csv" Value="csv" />
-                                                                    <telerik:DropDownListItem Text="Export as Excel" Value="Excel" />
+                                                                    <telerik:DropDownListItem Text="Export as Excel" Value="Xlsx" />
                                                                 </Items>
                                                             </telerik:RadDropDownList>
                                                         </span>
@@ -554,12 +560,12 @@
                                             <Columns>
                                                 <%--<telerik:GridClientSelectColumn UniqueName="IsPayment"></telerik:GridClientSelectColumn>
                                                 <telerik:GridCheckBoxColumn UniqueName="IsPayment" DataField="IsPayment"></telerik:GridCheckBoxColumn>--%>
-                                                <telerik:GridTemplateColumn>
+                                                <telerik:GridTemplateColumn Visible="false">
                                                     <ItemTemplate>
                                                         <asp:CheckBox ID="CheckBox1" runat="server" Skin="Bootstrap" />
                                                     </ItemTemplate>
                                                 </telerik:GridTemplateColumn>
-                                                <telerik:GridBoundColumn UniqueName="CustomerFullName" DataField="CustomerFullName" ItemStyle-ForeColor="Blue" HeaderText="Customer" ReadOnly="true">
+                                                <telerik:GridBoundColumn UniqueName="CustomerFullName" DataField="CustomerFullName" ItemStyle-ForeColor="Blue" HeaderText="Customer" ReadOnly="true" Visible="false">
                                                 </telerik:GridBoundColumn>
                                                 <telerik:GridBoundColumn UniqueName="PaymentName" DataField="PaymentName" HeaderText="Payment Name" ColumnEditorID="GridTextBoxEditor">
                                                 </telerik:GridBoundColumn>
@@ -750,9 +756,9 @@
                                                 <div class="form-group">
                                                     <div class="col-12">
                                                         <span>
-                                                            <label class="ebiz-label">
+                                                            <label class="ebiz-label mb-0">
                                                                 <telerik:RadCheckBox ID="RadCheckBox6" runat="server" Text="Send Receipt"
-                                                                    TabIndex="10" Skin="Bootstrap" Font-Size="14px">
+                                                                    TabIndex="10" Skin="Bootstrap" CssClass="pb-0" Font-Size="14px">
                                                                 </telerik:RadCheckBox>
                                                             </label>
                                                         </span>
@@ -1151,14 +1157,14 @@
                                                                                     <telerik:RadCheckBox ID="RadCheckBox4" runat="server" Text="Send Receipt" CssClass="form-control" TabIndex="10" Skin="Bootstrap" Font-Size="14px"></telerik:RadCheckBox>
                                                                                 </label>
                                                                             </span>
-                                                                            <span class="float-right class-SeperatedComman pt-2">Separate additional emails with a comma</span>
+                                                                            <span class="float-right class-SeperatedComman pt-3">Separate additional emails with a comma</span>
                                                                             <div class="pl-4">
                                                                                 <telerik:RadTextBox ID="RadTextBox7" runat="server" Skin="Bootstrap" TabIndex="9" Width="100%"></telerik:RadTextBox>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="form-row pt-5">
+                                                                <div class="form-row pt-5 pb-4">
                                                                     <div class="offset-6 col-md-4 col-12">
                                                                         <telerik:RadButton ID="RadButton2" runat="server" Text="Create Recurring Payment" Skin="Bootstrap" BackColor="#1492DB" ForeColor="White" TabIndex="11" Width="100%" Height="30px"></telerik:RadButton>
                                                                     </div>
@@ -1479,6 +1485,6 @@
             $("#divCardHolder").hide();
             $("#divCustomer").hide();
         })
-        </script>
+    </script>
 </body>
 </html>

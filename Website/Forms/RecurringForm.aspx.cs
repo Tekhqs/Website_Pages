@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -142,6 +143,33 @@ namespace Website.Forms
             };
             (sender as RadGrid).DataSource = recurringPaymentsList;
 
+        }
+
+        protected void RadGridHeaderDropDown_SelectedIndexChanged(object sender, DropDownListEventArgs e)
+        {
+            string dataValueField = (sender as DropDownList).DataValueField;
+            //string alternateText = (sender as ImageButton).AlternateText;
+            #region [ XSLX FORMAT ]
+            //if (alternateText == "Xlsx" && CheckBox2.Checked)
+            if (dataValueField == "Xlsx")
+            {
+                RadGrid_ScheduledRecurringPayments.MasterTableView.GetColumn("PaymentName").HeaderStyle.BackColor = Color.LightGray;
+                RadGrid_ScheduledRecurringPayments.MasterTableView.GetColumn("PaymentName").ItemStyle.BackColor = Color.LightGray;
+                //RadGrid1.MasterTableView.GetColumn("EmployeeID").HeaderStyle.BackColor = Color.LightGray;
+                //RadGrid1.MasterTableView.GetColumn("EmployeeID").ItemStyle.BackColor = Color.LightGray;
+            }
+            #endregion
+            RadGrid_ScheduledRecurringPayments.ExportSettings.Excel.Format = (GridExcelExportFormat)Enum.Parse(typeof(GridExcelExportFormat), dataValueField);
+            RadGrid_ScheduledRecurringPayments.ExportSettings.IgnorePaging = true;
+            RadGrid_ScheduledRecurringPayments.ExportSettings.ExportOnlyData = true;
+            RadGrid_ScheduledRecurringPayments.ExportSettings.OpenInNewWindow = true;
+            RadGrid_ScheduledRecurringPayments.MasterTableView.ExportToExcel();
+
+            //RadGrid1.ExportSettings.Excel.Format = (GridExcelExportFormat)Enum.Parse(typeof(GridExcelExportFormat), alternateText);
+            //RadGrid1.ExportSettings.IgnorePaging = CheckBox1.Checked;
+            //RadGrid1.ExportSettings.ExportOnlyData = true;
+            //RadGrid1.ExportSettings.OpenInNewWindow = true;
+            //RadGrid1.MasterTableView.ExportToExcel();
         }
     }
 

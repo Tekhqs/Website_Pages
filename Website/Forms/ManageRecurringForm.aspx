@@ -311,14 +311,14 @@
                                                                                     <telerik:RadCheckBox ID="chkReceiptToCustomer" runat="server" Text="Send Receipt" CssClass="form-control" TabIndex="10" Skin="Bootstrap" Font-Size="14px"></telerik:RadCheckBox>
                                                                                 </label>
                                                                             </span>
-                                                                            <span class="float-right class-SeperatedComman pt-2">Separate additional emails with a comma</span>
+                                                                            <span class="float-right class-SeperatedComman pt-3">Separate additional emails with a comma</span>
                                                                             <div class="pl-4">
                                                                                 <telerik:RadTextBox ID="txtEmailcc" runat="server" Skin="Bootstrap" TabIndex="9" Width="100%"></telerik:RadTextBox>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="form-row pt-5">
+                                                                <div class="form-row pt-5 pb-4">
                                                                     <div class="offset-6 col-md-4 col-12">
                                                                         <telerik:RadButton ID="btnProcess" runat="server" Text="Create Recurring Payment" Skin="Bootstrap" BackColor="#1492DB" ForeColor="White" TabIndex="11" Width="100%" Height="30px"></telerik:RadButton>
                                                                     </div>

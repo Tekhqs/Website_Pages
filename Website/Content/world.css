@@ -1,4 +1,23 @@
-﻿.RadTabStrip_Default .rtsLevel1 .rtsLink {
+﻿@font-face {
+    font-family: "Avenir Next LT Pro";
+    src: url("../fonts/AvenirNextLTPro-Regular.ttf");
+    src: url("../fonts/AvenirNextLTPro-Regular.ttf") format('truetype'), url('../fonts/AvenirNextLTPro-Regular.woff?#iefix') format('woff');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "AvenirNext";
+    src: url("../fonts/AvenirNextLTPro-Medium.ttf");
+    src: url("../fonts/AvenirNextLTPro-Medium.ttf") format('truetype'), url('../fonts/AvenirNextLTPro-Regular.woff?#iefix') format('woff');
+    font-weight: normal;
+}
+
+body {
+    font-family: "Avenir Next LT Pro";
+    overflow-x: hidden;
+}
+
+.RadTabStrip_Default .rtsLevel1 .rtsLink {
     background-image: none !important;
     background-color: #ffffff !important;
     border: none;
@@ -122,6 +141,24 @@ ul.rtsUL > li.rtsLI.rtsSelected  {
 
 .rbHorizontalList button.RadButton.rbRadioButton {
     margin-right: 100px;
+}
+
+.rgCommandCell {
+    border: none !important;
+}
+/*#RadGrid_ScheduledRecurringPayments {
+    border: none !important;
+}*/
+.rgPager td:first-child {
+    border: none !important;
+}
+
+#RadGrid_ScheduledRecurringPayments_ctl00 {
+    border: none !important;
+}
+
+#RadGrid1_ctl00 {
+    border: none !important;
 }
 
 /*Daimaan*/
